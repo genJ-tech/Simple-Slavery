@@ -80,10 +80,20 @@ namespace SimpleSlavery {
 			pawn.outfits.forcedHandler.SetForced(newCollar, true);
 		}
 
-		public static List<Pawn> GetSlavesMiserable() {
+		public static List<Pawn> GetSlaves() {
 			List<Pawn> pawns = new List<Pawn>();
 			foreach (Pawn pawn in PawnsFinder.AllMaps_FreeColonistsSpawned) {
-				if (!pawn.Downed && IsPawnColonySlave(pawn) && (pawn.mindState.mentalBreaker.BreakMajorIsImminent || pawn.mindState.mentalBreaker.BreakExtremeIsImminent)) {
+				if (IsPawnColonySlave(pawn)) {
+					pawns.Add(pawn);
+				}
+			}
+			return pawns;
+		}
+
+		public static List<Pawn> GetSlavesMiserable() {
+			List<Pawn> pawns = new List<Pawn>();
+			foreach (Pawn pawn in GetSlaves()) {
+				if (!pawn.Downed && (pawn.mindState.mentalBreaker.BreakMajorIsImminent || pawn.mindState.mentalBreaker.BreakExtremeIsImminent)) {
 					pawns.Add(pawn);
 				}
 			}

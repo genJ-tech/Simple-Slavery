@@ -1,5 +1,4 @@
-﻿using System;
-using RimWorld;
+﻿using RimWorld;
 using Verse;
 using Verse.AI;
 using System.Collections.Generic;
@@ -75,7 +74,8 @@ namespace SimpleSlavery {
 
 						if (!Victim.jobs.curDriver.asleep &&
 							!Victim.story.traits.HasTrait(TraitDef.Named("Wimp")) &&
-							!Victim.InMentalState
+							!Victim.InMentalState &&
+							!Victim.Downed
 						) {
 							if (Victim.story.traits.HasTrait(TraitDefOf.Nerves) &&
 								(Victim.story.traits.GetTrait(TraitDefOf.Nerves).Degree == -2 && Rand.Value > 0.66f) ||
@@ -113,6 +113,10 @@ namespace SimpleSlavery {
 			get {
 				return PathEndMode.Touch;
 			}
+		}
+
+		public override bool ShouldSkip(Pawn pawn, bool forced = false) {
+			return SlaveUtility.GetSlaves().Count == 0;
 		}
 
 		//
@@ -170,6 +174,10 @@ namespace SimpleSlavery {
 			get {
 				return PathEndMode.Touch;
 			}
+		}
+
+		public override bool ShouldSkip(Pawn pawn, bool forced = false) {
+			return SlaveUtility.GetSlaves().Count == 0;
 		}
 
 		//
