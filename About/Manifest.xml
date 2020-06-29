@@ -7,4 +7,5 @@
 		<li>HugsLib</li>
 	</dependencies>
 	<downloadUri>https://github.com/MarkSill/Simple-Slavery/releases/latest</downloadUri>
+	<manifestUri>https://cdn.jsdelivr.net/gh/MarkSill/Simple-Slavery/About/Manifest.xml</manifestUri>
 </Manifest>
