@@ -125,6 +125,10 @@ namespace SimpleSlavery {
 		public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false) {
 			var slave = (Pawn)t;
 
+			if (pawn == slave) {
+				return null;
+			}
+
 			if (!SlaveUtility.IsPawnColonySlave(slave) || !pawn.CanReserve(slave) || !SlaveUtility.GetEnslavedHediff(slave).toBeFreed || slave.InAggroMentalState)
 				return null;
 			return JobMaker.MakeJob(SS_JobDefOf.EmancipateSlave, slave);
@@ -185,6 +189,10 @@ namespace SimpleSlavery {
 		//
 		public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false) {
 			var slave = (Pawn)t;
+
+			if (pawn == slave) {
+				return null;
+			}
 
 			if (!SlaveUtility.IsPawnColonySlave(slave) || !pawn.CanReserve(slave) || SlaveUtility.GetEnslavedHediff(slave).shackledGoal == SlaveUtility.GetEnslavedHediff(slave).shackled || slave.InAggroMentalState)
 				return null;
