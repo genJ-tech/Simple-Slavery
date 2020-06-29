@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest>
+	<identifier>SimpleSlavery</identifier>
+	<version>0.1.0.0</version>
+	<dependencies>
+		<li>Harmony</li>
+		<li>HugsLib</li>
+	</dependencies>
+	<downloadUri>https://github.com/MarkSill/Simple-Slavery/releases/latest</downloadUri>
+</Manifest>
