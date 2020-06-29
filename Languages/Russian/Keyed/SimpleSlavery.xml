@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<LabelWordSlave>раб</LabelWordSlave>
+	<LabelWordEmancipate>освобожденный</LabelWordEmancipate>
+	<CommandDescriptionEmancipate>Отметьте, нужно ли освобождать {0}. Надзиратель сможет освободить {0} только при отметке этой опции.</CommandDescriptionEmancipate>
+	<LabelWordShackle>оковы</LabelWordShackle>
+	<CommandDescriptionShackle>Отметьте, стоит ли на {0} надеть кандалы. Скованные рабы не могут двигаться быстро, что осложняет возможность для них сбежать, но они менее производительны.</CommandDescriptionShackle>
+	<EnslavedPrisonerSuccess>{0} порабощен {1} без происшествий, и теперь можно отправить раба на работу.</EnslavedPrisonerSuccess>
+	<MessageSlaveEscaping>Раб {0} пытается сбежать!</MessageSlaveEscaping>
+	<ReasonFailedEnslave>не хочет быть в рабстве</ReasonFailedEnslave>
+	<LetterIncidentSlaveEscaping>{0} пытается сбежать!</LetterIncidentSlaveEscaping>
+	<LetterLabelSlaveEscaping>Раб сбежал!</LetterLabelSlaveEscaping>
+
+	<Label_MiserableSlaves>Несчастные рабы</Label_MiserableSlaves>
+	<Desc_MiserableSlaves>Раб колонии в опасно плохом настроении. Несчастный раб, скорее всего, попытается освободиться или напасть на ваших колонистов.</Desc_MiserableSlaves>
+	<Desc_MiserableSlavesPlural>Несколько рабов нашей колонии в опасно плохом настроении. Несчастные рабы чаще всего пытаются вырваться на свободу или даже устроить восстание.</Desc_MiserableSlavesPlural>
+
+	<Label_CollarExplosive_Arm>Взведенный ошейник</Label_CollarExplosive_Arm>
+	<Desc_CollarExplosive_Arm>Подготовьте взрывчатку в ошейнике для детонации.</Desc_CollarExplosive_Arm>
+	<Label_CollarExplosive_Detonate>Взорвать</Label_CollarExplosive_Detonate>
+	<Desc_CollarExplosive_Detonate>Взорвать ошейник, мгновенно убив носителя.</Desc_CollarExplosive_Detonate>
+	<ReasonArmedExplosiveCollar>Ошейник-бомба был взведен для взрыва.</ReasonArmedExplosiveCollar>
+
+	<Label_CollarElectric_Arm>Удар током</Label_CollarElectric_Arm>
+	<Desc_CollarElectric_Arm>Бить током носителя, пока не потеряет сознание.</Desc_CollarElectric_Arm>
+	<LetterIncidentECHeartAttack>У {0} остановилось сердце после электрического удара!</LetterIncidentECHeartAttack>
+	<LetterLabelECHeartAttack>Сердечный приступ</LetterLabelECHeartAttack>
+
+	<Label_CollarCrypto_Arm>Заморозить</Label_CollarCrypto_Arm>
+	<Desc_CollarCrypto_Arm>Остановить носителя на месте.</Desc_CollarCrypto_Arm>
+</LanguageData>

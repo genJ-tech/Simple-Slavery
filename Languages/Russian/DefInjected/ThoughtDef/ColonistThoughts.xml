@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<SlaveColonyThought.stages.0.label>рабский труд</SlaveColonyThought.stages.0.label>
+	<SlaveColonyThought.stages.0.description>Наша колония использует рабов. Это неправильно.</SlaveColonyThought.stages.0.description>
+
+	<KnowSlaveDied.stages.0.label>смерть раба</KnowSlaveDied.stages.0.label>
+	<KnowSlaveDied.stages.0.description>Один из наших рабов умер.</KnowSlaveDied.stages.0.description>
+</LanguageData>

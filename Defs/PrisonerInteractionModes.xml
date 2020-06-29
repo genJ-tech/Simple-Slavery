@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PrisonerInteractionModeDef>
+		<defName>PIM_Enslave</defName>
+		<label>enslave</label>
+		<listOrder>35</listOrder>
+	</PrisonerInteractionModeDef>
+</Defs>

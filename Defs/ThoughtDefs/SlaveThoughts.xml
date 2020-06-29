@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<ThoughtDef>
+		<defName>EnslavedThought</defName>
+		<workerClass>SimpleSlavery.ThoughtWorker_Enslaved</workerClass>
+		<stages>
+			<li>
+				<label>enslaved</label>
+				<description>I've just been enslaved by these people. I can't believe this.</description>
+				<baseMoodEffect>-15</baseMoodEffect>
+			</li>
+			<li>
+				<label>enslaved</label>
+				<description>I'm being kept as a slave. I just wish I could be let free.</description>
+				<baseMoodEffect>-15</baseMoodEffect>
+			</li>
+			<li>
+				<label>enslaved</label>
+				<description>I feel like I'm never going to be free again.</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+			<li>
+				<label>enslaved</label>
+				<description>I don't even know what it's like to be free anymore.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+			<li>
+				<label>stockholm syndrome</label>
+				<description>These people aren't so bad after all.</description>
+				<baseMoodEffect>5</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>ExplosiveCollar</defName>
+		<workerClass>SimpleSlavery.ThoughtWorker_ExplosiveCollar</workerClass>
+		<stages>
+			<li>
+				<label>explosive collar</label>
+				<description>They've put an explosive collar around my neck! I better not try anything dangerous if I want to live.</description>
+				<baseMoodEffect>5</baseMoodEffect>
+			</li>
+			<li>
+				<label>armed explosive collar</label>
+				<description>They're going to blow my head off!!!</description>
+				<baseMoodEffect>-50</baseMoodEffect>
+			</li>
+			<li>
+				<label>explosive slave collar</label>
+				<description>This seems like a bad idea.</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef ParentName="DeathMemory">
+		<defName>KnowFellowSlaveDied</defName>
+		<durationDays>3</durationDays>
+		<stackLimit>3</stackLimit>
+		<stages>
+			<li>
+				<label>slave died</label>
+				<description>One of the slaves here died. That doesn't bode well for me.</description>
+				<baseMoodEffect>-8</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+</Defs>

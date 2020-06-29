@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<DoEnslavement.label>порабощать заключенных</DoEnslavement.label>
+	<DoEnslavement.verb>порабощать</DoEnslavement.verb>
+	<DoEnslavement.gerund>порабощает</DoEnslavement.gerund>
+
+	<DoEmancipate.label>отпускать рабов</DoEmancipate.label>
+	<DoEmancipate.verb>отпускать</DoEmancipate.verb>
+	<DoEmancipate.gerund>отпускает</DoEmancipate.gerund>
+
+	<DoShackling.label>рабские кандалы</DoShackling.label>
+	<DoShackling.verb>отрегулировать кандалы</DoShackling.verb>
+	<DoShackling.gerund>регулирует кандалы</DoShackling.gerund>
+</LanguageData>

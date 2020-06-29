@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<LabelWordSlave>escravo</LabelWordSlave>
+	<LabelWordEmancipate>emancipar</LabelWordEmancipate>
+	<CommandDescriptionEmancipate>Marque se {0} deve ser libertado(a) ou não. Um guarda só será capaz de emancipar {0} quando isto estiver ativado.</CommandDescriptionEmancipate>
+	<LabelWordShackle>grilhão</LabelWordShackle>
+	<CommandDescriptionShackle>Marque se {0} deve ser acorrentado(a) ou não. Escravos alguemados tem seu movimento reduzido, tornando eles fáceis de capturar porém menos produtivos.</CommandDescriptionShackle>
+	<EnslavedPrisonerSuccess>{0} escravizou {1} sem incidentes e agora este pode ser posto a trabalhar.</EnslavedPrisonerSuccess>
+	<MessageSlaveEscaping>Escravo(a) {0} esté tentando escapar!</MessageSlaveEscaping>
+	<ReasonFailedEnslave>recusa a ser escravizado(a)</ReasonFailedEnslave>
+	<LetterIncidentSlaveEscaping>{0} esté tentando escapar!</LetterIncidentSlaveEscaping>
+	<LetterLabelSlaveEscaping>Escravo(a) Escapando!</LetterLabelSlaveEscaping>
+
+	<Label_MiserableSlaves>Escravos miseráveis</Label_MiserableSlaves>
+	<Desc_MiserableSlaves>Um escravo da colônia está com humor perigosamente baixo. Um escravo miserável é mais propenso a tentar se libertar ou atacar seus colonistas.</Desc_MiserableSlaves>
+	<Desc_MiserableSlavesPlural>Alguns escravos na colônia estão com humor perigosamente baixo. Escravo miseráveis são mais propensos a tentarem se libertar ou até organizarem uma revolta</Desc_MiserableSlavesPlural>
+
+	<Label_CollarExplosive_Arm>Armar Coleira</Label_CollarExplosive_Arm>
+	<Desc_CollarExplosive_Arm>Prepara os explosivos na coleira do escravo para detonação.</Desc_CollarExplosive_Arm>
+	<Label_CollarExplosive_Detonate>Detonar</Label_CollarExplosive_Detonate>
+	<Desc_CollarExplosive_Detonate>Detona o explosivo na coleira, instantaneamente matando o portador.</Desc_CollarExplosive_Detonate>
+</LanguageData>

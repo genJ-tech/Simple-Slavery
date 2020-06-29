@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<DoEnslavement.label>escravizar prisioneiro(a)</DoEnslavement.label>
+	<DoEnslavement.verb>escravizar</DoEnslavement.verb>
+	<DoEnslavement.gerund>escravizando</DoEnslavement.gerund>
+
+	<DoEmancipate.label>emancipar escravos</DoEmancipate.label>
+	<DoEmancipate.verb>emancipar</DoEmancipate.verb>
+	<DoEmancipate.gerund>emancipando</DoEmancipate.gerund>
+
+	<DoShackling.label>acorrentando escravos</DoShackling.label>
+	<DoShackling.verb>ajustar grilhões</DoShackling.verb>
+	<DoShackling.gerund>ajustando grilhões</DoShackling.gerund>
+</LanguageData>

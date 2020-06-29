@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<Apparel_SlaveCollar.label>coleira de escravo</Apparel_SlaveCollar.label>
+	<Apparel_SlaveCollar.description>Uma coleira de metal presa ao pescoço dos escravos.</Apparel_SlaveCollar.description>
+
+	<Apparel_SlaveCollar_Tribal.label>coleira tribal de escravo</Apparel_SlaveCollar_Tribal.label>
+	<Apparel_SlaveCollar_Tribal.description>Uma simples coleira de couro presa ao pescoço dos escravos.</Apparel_SlaveCollar_Tribal.description>
+
+	<Apparel_SlaveCollar_Explosive.label>coleira explosiva</Apparel_SlaveCollar_Explosive.label>
+	<Apparel_SlaveCollar_Explosive.description>***PERIGO EXPLOSIVO***\n\n Uma coleira de metal presa ao pescoço dos escravos. Quando armada e ativada explode fora a cabeça do escravo com um pequeno mas poderoso estrondo. \n\n***PERIGO EXPLOSIVO***</Apparel_SlaveCollar_Explosive.description>
+</LanguageData>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<EnslavedThought.stages.0.label>в рабстве</EnslavedThought.stages.0.label>
+	<EnslavedThought.stages.0.description>Меня только что поработили этим люди. Я не могу в это поверить.</EnslavedThought.stages.0.description>
+	<EnslavedThought.stages.1.label>в рабстве</EnslavedThought.stages.1.label>
+	<EnslavedThought.stages.1.description>Меня держат как раба. Я просто хочу чтобы меня освободили.</EnslavedThought.stages.1.description>
+	<EnslavedThought.stages.2.label>в рабстве</EnslavedThought.stages.2.label>
+	<EnslavedThought.stages.2.description>Я чувствую, что больше никогда не буду на свободе.</EnslavedThought.stages.2.description>
+	<EnslavedThought.stages.3.label>в рабстве</EnslavedThought.stages.3.label>
+	<EnslavedThought.stages.3.description>Я не помню, каково это быть не в рабстве.</EnslavedThought.stages.3.description>
+	<EnslavedThought.stages.4.label>смирившийся раб</EnslavedThought.stages.4.label>
+	<EnslavedThought.stages.4.description>Эти люди не так уж и плохи, в конце концов.</EnslavedThought.stages.4.description>
+
+	<ExplosiveCollar.stages.0.label>ошейник-бомба</ExplosiveCollar.stages.0.label>
+	<ExplosiveCollar.stages.0.description>Они надели ошейник со взрывчаткой на мою шею! Лучше не пытаться делать ничего опасного, если я хочу жить.</ExplosiveCollar.stages.0.description>
+	<ExplosiveCollar.stages.1.label>взведенный ошейник-бомба</ExplosiveCollar.stages.1.label>
+	<ExplosiveCollar.stages.1.description>Они собираются оторвать мне голову!!!</ExplosiveCollar.stages.1.description>
+	<ExplosiveCollar.stages.2.label>ошейник-бомба</ExplosiveCollar.stages.2.label>
+	<ExplosiveCollar.stages.2.description>Это кажется плохой идеей.</ExplosiveCollar.stages.2.description>
+
+	<KnowFellowSlaveDied.stages.0.label>смерть раба</KnowFellowSlaveDied.stages.0.label>
+	<KnowFellowSlaveDied.stages.0.description>Один из рабов в поселении умер. Это не сулит ничего хорошего для меня.</KnowFellowSlaveDied.stages.0.description>
+</LanguageData>

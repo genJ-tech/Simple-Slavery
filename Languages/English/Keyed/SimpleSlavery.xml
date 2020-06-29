@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<LabelWordSlave>slave</LabelWordSlave>
+	<LabelWordEmancipate>emancipate</LabelWordEmancipate>
+	<CommandDescriptionEmancipate>Mark whether or not {0} is to be freed. A warden will only be able to emancipate {0} when this is toggled on.</CommandDescriptionEmancipate>
+	<LabelWordShackle>shackle</LabelWordShackle>
+	<CommandDescriptionShackle>Mark whether or not {0} is to be shackled. Shackled slaves are unable to move quickly, making them easier to catch but less productive.</CommandDescriptionShackle>
+	<EnslavedPrisonerSuccess>{0} has enslaved {1} without incident, and may now be put to work.</EnslavedPrisonerSuccess>
+	<MessageSlaveEscaping>Slave {0} is attempting to escape!</MessageSlaveEscaping>
+	<ReasonFailedEnslave>refuses to be enslaved</ReasonFailedEnslave>
+	<LetterIncidentSlaveEscaping>{0} is attempting to escape!</LetterIncidentSlaveEscaping>
+	<LetterLabelSlaveEscaping>Slave Escaping!</LetterLabelSlaveEscaping>
+
+	<Label_MiserableSlaves>Miserable slaves</Label_MiserableSlaves>
+	<Desc_MiserableSlaves>A colony slave is in a dangerously low mood. A miserable slave is more likely to attempt to break free or attack your colonists.</Desc_MiserableSlaves>
+	<Desc_MiserableSlavesPlural>There are multiple slaves in the colony exhibiting dangerously low moods. Miserable slaves are more likely to attempt to break free or even stage a revolt.</Desc_MiserableSlavesPlural>
+
+	<Label_CollarExplosive_Arm>Arm Collar</Label_CollarExplosive_Arm>
+	<Desc_CollarExplosive_Arm>Ready the explosives in the slave collar for detonation.</Desc_CollarExplosive_Arm>
+	<Label_CollarExplosive_Detonate>Detonate</Label_CollarExplosive_Detonate>
+	<Desc_CollarExplosive_Detonate>Detonate the explosives in the collar, instantly killing the wearer.</Desc_CollarExplosive_Detonate>
+	<ReasonArmedExplosiveCollar>Explosive collar was armed to detonate.</ReasonArmedExplosiveCollar>
+
+	<Label_CollarElectric_Arm>Zap</Label_CollarElectric_Arm>
+	<Desc_CollarElectric_Arm>Electrocutes wearer untill uncouscious.</Desc_CollarElectric_Arm>
+	<LetterIncidentECHeartAttack>{0} is having a heart attack from an electric shock!</LetterIncidentECHeartAttack>
+	<LetterLabelECHeartAttack>Heart Attack</LetterLabelECHeartAttack>
+
+	<Label_CollarCrypto_Arm>Freeze</Label_CollarCrypto_Arm>
+	<Desc_CollarCrypto_Arm>Freezes wearer in place.</Desc_CollarCrypto_Arm>
+</LanguageData>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<Apparel_SlaveCollar_Explosive.label>ошейник-бомба</Apparel_SlaveCollar_Explosive.label>
+	<Apparel_SlaveCollar_Explosive.description>***Осторожно взрывчатка***\n\nМеталлический ошейник для раба. Когда взведен и активирован при детонации оторвет голову носителя. \n\n***Осторожно взрывчатка***</Apparel_SlaveCollar_Explosive.description>
+
+	<Apparel_SlaveCollar_Electric.label>электрический ошейник</Apparel_SlaveCollar_Electric.label>
+	<Apparel_SlaveCollar_Electric.description>Металлический ошейник, который носят рабы. Когда активирован - бьет носителя током до потери сознания.</Apparel_SlaveCollar_Electric.description>
+
+	<Apparel_SlaveCollar_Crypto.label>стазисный ошейник</Apparel_SlaveCollar_Crypto.label>
+	<Apparel_SlaveCollar_Crypto.description>Металлический ошейник для рабов. Когда активирован - замораживает носителя в стазисе, оставляя его беспомощным и не способным перемещаться. Используется для ненасильственного подавления восстания рабов.</Apparel_SlaveCollar_Crypto.description>
+
+	<Apparel_SlaveCollar.label>рабский ошейник</Apparel_SlaveCollar.label>
+	<Apparel_SlaveCollar.description>Металлический ошейник, который носят рабы.</Apparel_SlaveCollar.description>
+
+	<Apparel_SlaveCollar_Tribal.label>примитивный рабский ошейник</Apparel_SlaveCollar_Tribal.label>
+	<Apparel_SlaveCollar_Tribal.description>Простой кожаный ошейник для раба.</Apparel_SlaveCollar_Tribal.description>
+</LanguageData>

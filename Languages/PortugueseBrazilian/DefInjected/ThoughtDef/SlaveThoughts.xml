@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<EnslavedThought.stages.enslaved-0.label>escravizado</EnslavedThought.stages.enslaved-0.label>
+	<EnslavedThought.stages.enslaved-0.description>Estas pessoas acabaram de me escravizar. Não posso acreditar nisso.</EnslavedThought.stages.enslaved-0.description>
+	<EnslavedThought.stages.enslaved-1.label>escravizado</EnslavedThought.stages.enslaved-1.label>
+	<EnslavedThought.stages.enslaved-1.description>Estão me mantendo em escravidão. Eu só queria que me libertassem.</EnslavedThought.stages.enslaved-1.description>
+	<EnslavedThought.stages.enslaved-2.label>escravizado</EnslavedThought.stages.enslaved-2.label>
+	<EnslavedThought.stages.enslaved-2.description>Sinto como se nunca mais fosse ser livre.</EnslavedThought.stages.enslaved-2.description>
+	<EnslavedThought.stages.enslaved-3.label>escravizado</EnslavedThought.stages.enslaved-3.label>
+	<EnslavedThought.stages.enslaved-3.description>Eu já nem sei mais o que é ser livre.</EnslavedThought.stages.enslaved-3.description>
+	<EnslavedThought.stages.stockholm_syndrome.label>síndrome de Estocolmo</EnslavedThought.stages.stockholm_syndrome.label>
+	<EnslavedThought.stages.stockholm_syndrome.description>Estas pessoas não são tão ruins assim.</EnslavedThought.stages.stockholm_syndrome.description>
+
+	<ExplosiveCollar.stages.explosive_collar.label>coleira explosiva</ExplosiveCollar.stages.explosive_collar.label>
+	<ExplosiveCollar.stages.explosive_collar.description>Eles colocaram uma coleira explosiva no meu pescoço! Melhor eu não tentar nada perigoso se eu quiser viver.</ExplosiveCollar.stages.explosive_collar.description>
+
+	<ExplosiveCollar.stages.armed_explosive_collar.label>coleira explosiva armada</ExplosiveCollar.stages.armed_explosive_collar.label>
+	<ExplosiveCollar.stages.armed_explosive_collar.description>Eles vão explodir minha cabeça!!!</ExplosiveCollar.stages.armed_explosive_collar.description>
+
+	<ExplosiveCollar.stages.explosive_slave_collar.label>coleira de escravo explosiva</ExplosiveCollar.stages.explosive_slave_collar.label>
+	<ExplosiveCollar.stages.explosive_slave_collar.description>Isso parece uma má ideia.</ExplosiveCollar.stages.explosive_slave_collar.description>
+
+	<KnowFellowSlaveDied.stages.slave_died.label>escravo(a) morreu</KnowFellowSlaveDied.stages.slave_died.label>
+	<KnowFellowSlaveDied.stages.slave_died.description>Um dos escravos morreu. Isso é um mau agouro.</KnowFellowSlaveDied.stages.slave_died.description>
+</LanguageData>

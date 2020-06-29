@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<Enslaved.label>в рабстве (hidden)</Enslaved.label>
+	<SlaveMemory.label>рабская память (hidden)</SlaveMemory.label>
+	<Hediff_EmancipateFix.label>лечит специфические баги</Hediff_EmancipateFix.label>
+	<Crypto_Stasis.label>крипто-стазис</Crypto_Stasis.label>
+	<Electrocuted.label>электрошок</Electrocuted.label>
+</LanguageData>

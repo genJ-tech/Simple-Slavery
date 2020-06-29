@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<SlaveColonyThought.stages.slave_labor.label>trabalho escravo</SlaveColonyThought.stages.slave_labor.label>
+	<SlaveColonyThought.stages.slave_labor.description>Nossa colônia está mantendo pessoas como escravas. Isto é errado.</SlaveColonyThought.stages.slave_labor.description>
+
+	<KnowSlaveDied.stages.slave_died.label>escravo(a) morreu</KnowSlaveDied.stages.slave_died.label>
+	<KnowSlaveDied.stages.slave_died.description>Algum dos escravos morreu.</KnowSlaveDied.stages.slave_died.description>
+</LanguageData>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<EnslavePrisoner.reportString>поработить TargetA.</EnslavePrisoner.reportString>
+	<EmancipateSlave.reportString>отпустить TargetA.</EmancipateSlave.reportString>
+	<ShackleSlave.reportString>регулировать кандалы TargetA.</ShackleSlave.reportString>
+</LanguageData>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<Make_Apparel_SlaveCollar.label>fazer coleira de escravo</Make_Apparel_SlaveCollar.label>
+	<Make_Apparel_SlaveCollar.description>Faz uma coleira de escravo</Make_Apparel_SlaveCollar.description>
+	<Make_Apparel_SlaveCollar.jobString>Fazendo coleira de escravo</Make_Apparel_SlaveCollar.jobString>
+
+	<Make_Apparel_SlaveCollar_Tribal.label>fazer coleira tribal de escravo</Make_Apparel_SlaveCollar_Tribal.label>
+	<Make_Apparel_SlaveCollar_Tribal.description>Faz uma coleira tribal de escravo</Make_Apparel_SlaveCollar_Tribal.description>
+	<Make_Apparel_SlaveCollar_Tribal.jobString>Fazendo coleira tribal de escravo</Make_Apparel_SlaveCollar_Tribal.jobString>
+
+	<Apparel_SlaveCollar_Explosive.label>fazer coleira de escravo explosiva</Apparel_SlaveCollar_Explosive.label>
+	<Apparel_SlaveCollar_Explosive.description>Faz uma coleira de escravo explosiva</Apparel_SlaveCollar_Explosive.description>
+	<Apparel_SlaveCollar_Explosive.jobString>Fazendo coleira de escravo explosiva</Apparel_SlaveCollar_Explosive.jobString>
+</LanguageData>

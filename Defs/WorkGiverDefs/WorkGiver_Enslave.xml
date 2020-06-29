@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<WorkGiverDef>
+		<defName>DoEnslavement</defName>
+		<label>enslave prisoners</label>
+		<giverClass>SimpleSlavery.WorkGiver_Warden_DoEnslavement</giverClass>
+		<workType>Warden</workType>
+		<verb>enslave</verb>
+		<gerund>enslaving</gerund>
+		<priorityInType>105</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
+		<defName>DoEmancipate</defName>
+		<label>emancipate slaves</label>
+		<giverClass>SimpleSlavery.WorkGiver_Warden_DoEmancipate</giverClass>
+		<workType>Warden</workType>
+		<verb>emancipate</verb>
+		<gerund>emancipating</gerund>
+		<priorityInType>104</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
+		<defName>DoShackling</defName>
+		<label>shackle slaves</label>
+		<giverClass>SimpleSlavery.WorkGiver_Warden_ShackleSlave</giverClass>
+		<workType>Warden</workType>
+		<verb>adjust shackles</verb>
+		<gerund>adjusting shackles</gerund>
+		<priorityInType>103</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+</Defs>

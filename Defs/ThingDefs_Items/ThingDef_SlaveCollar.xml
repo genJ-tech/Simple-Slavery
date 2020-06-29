@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<ThingDef Name="ApparelBase" Abstract="True">
+		<thingClass>Apparel</thingClass>
+		<category>Item</category>
+		<selectable>True</selectable>
+		<pathCost>10</pathCost>
+		<useHitPoints>True</useHitPoints>
+		<techLevel>Medieval</techLevel>
+		<graphicData>
+			<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+		</graphicData>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>2</DeteriorationRate>
+			<Beauty>-4</Beauty>
+			<SellPriceFactor>0.70</SellPriceFactor>
+		</statBases>
+		<altitudeLayer>Item</altitudeLayer>
+		<alwaysHaulable>True</alwaysHaulable>
+		<tickerType>Never</tickerType>
+		<comps>
+			<li Class="CompProperties_Forbiddable" />
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef Name="ArmorMakeableBase" ParentName="ApparelBase" Abstract="True">
+		<recipeMaker>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Machining</soundWorking>
+			<unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+		</recipeMaker>
+	</ThingDef>
+
+	<ThingDef Name="SlaveCollarBase" ParentName="ArmorMakeableBase" Abstract="True">
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<Flammability>0</Flammability>
+			<WorkToMake>5000</WorkToMake>
+			<MaxHitPoints>100</MaxHitPoints>
+			<DeteriorationRate>1</DeteriorationRate>
+			<Mass>1</Mass>
+			<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+		</statBases>
+		<equippedStatOffsets>
+			<MoveSpeed>-0.05</MoveSpeed>
+		</equippedStatOffsets>
+		<apparel>
+			<bodyPartGroups>
+				<li>Neck</li>
+			</bodyPartGroups>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/SlaveCollar/SlaveCollar</wornGraphicPath>
+			<layers>
+				<li>Overhead</li>
+			</layers>
+		</apparel>
+		<tradeTags>
+			<li>SlaveCollar</li>
+		</tradeTags>
+		<thingCategories>
+			<li>Apparel</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef ParentName="SlaveCollarBase">
+		<defName>Apparel_SlaveCollar_Explosive</defName>
+		<thingClass>SimpleSlavery.SlaveCollar_Explosive</thingClass>
+		<tickerType>Normal</tickerType>
+		<label>explosive collar</label>
+		<description>***DANGER EXPLOSIVE***\n\nA metal collar fastened around the necks of slaves. When armed and activated, blows the slave's head off with a small but powerful bang. \n\n***DANGER EXPLOSIVE***</description>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/SlaveCollar/Explosive/SlaveCollar_Explosive</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/SlaveCollar/Explosive/SlaveCollar_Explosive</wornGraphicPath>
+		</apparel>
+		<statBases>
+			<WorkToMake>7000</WorkToMake>
+			<MaxHitPoints>125</MaxHitPoints>
+		</statBases>
+		<techLevel>Industrial</techLevel>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<costStuffCount>50</costStuffCount>
+		<costList>
+			<ComponentIndustrial>1</ComponentIndustrial>
+			<Shell_HighExplosive>2</Shell_HighExplosive>
+		</costList>
+		<recipeMaker>
+			<recipeUsers>
+				<li>TableMachining</li>
+			</recipeUsers>
+		</recipeMaker>
+	</ThingDef>
+
+	<ThingDef ParentName="SlaveCollarBase">
+		<defName>Apparel_SlaveCollar_Electric</defName>
+		<thingClass>SimpleSlavery.SlaveCollar_Electric</thingClass>
+		<tickerType>Normal</tickerType>
+		<label>electric collar</label>
+		<description>A metal collar fastened around the necks of slaves. When activated, electrocutes wearer until unconscious.</description>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/SlaveCollar/Electric/SlaveCollar_Electric</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/SlaveCollar/Electric/SlaveCollar_Electric</wornGraphicPath>
+		</apparel>
+		<statBases>
+			<WorkToMake>9000</WorkToMake>
+			<MaxHitPoints>150</MaxHitPoints>
+		</statBases>
+		<techLevel>Spacer</techLevel>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<costStuffCount>50</costStuffCount>
+		<costList>
+			<ComponentIndustrial>3</ComponentIndustrial>
+			<Plasteel>10</Plasteel>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>MicroelectronicsBasics</researchPrerequisite>
+			<recipeUsers>
+				<li>TableMachining</li>
+			</recipeUsers>
+		</recipeMaker>
+	</ThingDef>
+
+	<ThingDef ParentName="SlaveCollarBase">
+		<defName>Apparel_SlaveCollar_Crypto</defName>
+		<thingClass>SimpleSlavery.SlaveCollar_Crypto</thingClass>
+		<label>crypto collar</label>
+		<tickerType>Normal</tickerType>
+		<description>A metal collar fastened around the necks of slaves. When activated, it freezes it's wearer in place leaving them completely immobile and defenceless. Used for non-violent suppresion of slaves.</description>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/SlaveCollar/Crypto/SlaveCollar_Crypto</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/SlaveCollar/Crypto/SlaveCollar_Crypto</wornGraphicPath>
+		</apparel>
+		<statBases>
+			<WorkToMake>11500</WorkToMake>
+			<MaxHitPoints>300</MaxHitPoints>
+		</statBases>
+		<techLevel>Archotech</techLevel>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<costStuffCount>75</costStuffCount>
+		<costList>
+			<Uranium>10</Uranium>
+			<ComponentSpacer>2</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>Cryptosleep</researchPrerequisite>
+			<recipeUsers>
+				<li>FabricationBench</li>
+			</recipeUsers>
+		</recipeMaker>
+	</ThingDef>
+
+	<ThingDef ParentName="SlaveCollarBase">
+		<defName>Apparel_SlaveCollar</defName>
+		<label>slave collar</label>
+		<description>A metal collar fastened around the necks of slaves.</description>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/SlaveCollar/SlaveCollar</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<techLevel>Medieval</techLevel>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<costStuffCount>25</costStuffCount>
+		<recipeMaker>
+			<recipeUsers>
+				<li>FueledSmithy</li>
+				<li>ElectricSmithy</li>
+			</recipeUsers>
+		</recipeMaker>
+	</ThingDef>
+
+	<ThingDef ParentName="SlaveCollarBase">
+		<defName>Apparel_SlaveCollar_Tribal</defName>
+		<label>tribal slave collar</label>
+		<description>A simple leather collar fastened around the necks of slaves.</description>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/SlaveCollar/Tribal/SlaveCollar_Tribal</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/SlaveCollar/Tribal/SlaveCollar_Tribal</wornGraphicPath>
+		</apparel>
+		<statBases>
+			<WorkToMake>3000</WorkToMake>
+			<MaxHitPoints>75</MaxHitPoints>
+		</statBases>
+		<techLevel>Neolithic</techLevel>
+		<stuffCategories>
+			<li>Leathery</li>
+		</stuffCategories>
+		<costStuffCount>25</costStuffCount>
+		<recipeMaker>
+			<recipeUsers>
+				<li>ElectricTailoringBench</li>
+				<li>HandTailoringBench</li>
+				<li>CraftingSpot</li>
+			</recipeUsers>
+		</recipeMaker>
+	</ThingDef>
+</Defs>
