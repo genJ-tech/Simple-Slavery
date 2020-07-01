@@ -111,6 +111,10 @@ namespace SimpleSlavery {
 			if (pawn.health.hediffSet.HasHediff(SS_HediffDefOf.SlaveMemory)) {
 				// Re-apply all player settings that get reset upon leaving faction
 				var memory = pawn.health.hediffSet.GetFirstHediffOfDef(SS_HediffDefOf.SlaveMemory) as Hediff_SlaveMemory;
+				if (pawn.workSettings == null) {
+					pawn.workSettings = new Pawn_WorkSettings(pawn);
+					pawn.workSettings.EnableAndInitialize();
+				}
 				foreach (KeyValuePair<WorkTypeDef, int> workPriority in memory.savedWorkPriorities) {
 					pawn.workSettings.SetPriority(workPriority.Key, workPriority.Value);
 				}
