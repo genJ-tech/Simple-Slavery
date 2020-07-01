@@ -4,7 +4,7 @@
 	<author>Thirite, Ziehn, MarkSill</author>
 	<url>https://github.com/MarkSill/Simple-Slavery</url>
 	<supportedVersions>
-		<li>1.0</li>
+		<!-- <li>1.0</li> no longer supported -->
 		<li>1.1</li>
 	</supportedVersions>
 	<packageId>syl.simpleslavery</packageId>
@@ -15,6 +15,12 @@
 			<displayName>Harmony</displayName>
 			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
 			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+		</li>
+		<li>
+			<packageId>UnlimitedHugs.HugsLib</packageId>
+			<displayName>HugsLib</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/818773962</steamWorkshopUrl>
+			<downloadUrl>https://github.com/UnlimitedHugs/RimworldHugsLib/releases/latest</downloadUrl>
 		</li>
 	</modDependencies>
 </ModMetaData>
