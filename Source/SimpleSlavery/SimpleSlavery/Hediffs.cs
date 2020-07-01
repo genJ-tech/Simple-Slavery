@@ -48,6 +48,10 @@ namespace SimpleSlavery {
 		}
 
 		public void SaveMemory() {
+			if (pawn.workSettings == null) {
+				pawn.workSettings = new Pawn_WorkSettings(pawn);
+				pawn.workSettings.EnableAndInitialize();
+			}
 			foreach (WorkTypeDef work in DefDatabase<WorkTypeDef>.AllDefs) {
 				if (!savedWorkPriorities.ContainsKey(work)) {
 					savedWorkPriorities.Add(work, pawn.workSettings.GetPriority(work));

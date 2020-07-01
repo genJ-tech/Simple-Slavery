@@ -58,6 +58,7 @@
     <Compile Include="JobDrivers.cs" />
     <Compile Include="Hediffs.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_SlaveColony.cs" />
+    <Compile Include="UI\MainTabWindow_Slaves.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="0Harmony, Version=1.2.0.1, Culture=neutral, processorArchitecture=MSIL">
