@@ -2,19 +2,19 @@
 <Defs>
 	<JobDef>
 		<defName>EnslavePrisoner</defName>
-		<driverClass>SimpleSlavery.JobDriver_EnslavePrisoner</driverClass>
+		<driverClass>SimpleSlavery.Jobs.JobDriver_EnslavePrisoner</driverClass>
 		<reportString>enslaving TargetA.</reportString>
 	</JobDef>
 
 	<JobDef>
 		<defName>EmancipateSlave</defName>
-		<driverClass>SimpleSlavery.JobDriver_EmancipateSlave</driverClass>
+		<driverClass>SimpleSlavery.Jobs.JobDriver_EmancipateSlave</driverClass>
 		<reportString>emancipating TargetA.</reportString>
 	</JobDef>
 
 	<JobDef>
 		<defName>ShackleSlave</defName>
-		<driverClass>SimpleSlavery.JobDriver_ShackleSlave</driverClass>
+		<driverClass>SimpleSlavery.Jobs.JobDriver_ShackleSlave</driverClass>
 		<reportString>Adjusting shackles for TargetA.</reportString>
 	</JobDef>
 </Defs>

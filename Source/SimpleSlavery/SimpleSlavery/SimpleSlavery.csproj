@@ -50,6 +50,9 @@
     <Compile Include="Alert_MiserableSlaves.cs" />
     <Compile Include="Collars.cs" />
     <Compile Include="DefOf.cs" />
+    <Compile Include="Jobs\Emancipate.cs" />
+    <Compile Include="Jobs\Enslave.cs" />
+    <Compile Include="Jobs\ShackleSlave.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleSlavery.cs" />
     <Compile Include="SlaveComp.cs" />
@@ -57,7 +60,6 @@
     <Compile Include="ThoughtWorkers\ThoughtWorker_ExplosiveCollar.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_Enslaved.cs" />
     <Compile Include="HarmonyPatches.cs" />
-    <Compile Include="JobDrivers.cs" />
     <Compile Include="Hediffs.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_SlaveColony.cs" />
     <Compile Include="UI\MainTabWindow_Slaves.cs" />
