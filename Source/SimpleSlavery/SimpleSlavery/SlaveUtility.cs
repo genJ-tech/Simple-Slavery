@@ -91,6 +91,16 @@ namespace SimpleSlavery {
 			return pawns;
 		}
 
+		public static List<Pawn> GetAllSlaves() {
+			List<Pawn> pawns = new List<Pawn>();
+			foreach (Pawn pawn in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_Colonists) {
+				if (IsPawnColonySlave(pawn)) {
+					pawns.Add(pawn);
+				}
+			}
+			return pawns;
+		}
+
 		public static List<Pawn> GetSlavesMiserable() {
 			List<Pawn> pawns = new List<Pawn>();
 			foreach (Pawn pawn in GetSlaves()) {

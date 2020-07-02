@@ -422,5 +422,16 @@ namespace SimpleSlavery {
 			}
 		}
 	}
+
+	//[HarmonyPatch]
+	//public static class StorytellerUtilityPopulation_AdjustedPopulation_Patch {
+	//	static MethodBase 
+	//}
+	[HarmonyPatch(typeof(StorytellerUtilityPopulation), "AdjustedPopulation", MethodType.Getter)]
+	public static class StorytellerUtilityPopulation_AdjustedPopulation_Patch {
+		static void Postfix(ref float __result) {
+			__result -= ((float)SlaveUtility.GetAllSlaves().Count) * 0.5f;
+		}
+	}
 }
 
