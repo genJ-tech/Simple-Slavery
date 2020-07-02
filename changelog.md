@@ -1,4 +1,7 @@
 # Simple Slavery Changelog
+## v1.0.1
+* Fix not being able to use special collar abilities (i.e. electric collar).
+
 ## v1.0.0
 * Add new tab that lists slaves, displays their willpower, and allows for changing emancipation/shackle state.
 * Make slaves only count for half a pawn according to the storyteller (same as prisoners).

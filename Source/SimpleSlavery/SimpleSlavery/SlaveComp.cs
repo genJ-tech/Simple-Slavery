@@ -33,6 +33,15 @@ namespace SimpleSlavery {
 				shackleSlave.activateSound = SoundDefOf.Click;
 				shackleSlave.icon = ContentFinder<Texture2D>.Get("UI/Commands/Shackle", true);
 				yield return shackleSlave;
+
+				if (pawn.apparel != null) {
+					foreach (var apparel in pawn.apparel.WornApparel) {
+						var slaveApparel = apparel as SlaveApparel;
+						if (slaveApparel != null) {
+							foreach (var g in slaveApparel.SlaveGizmos()) yield return g;
+						}
+					}
+				}
 			}
 		}
 	}
