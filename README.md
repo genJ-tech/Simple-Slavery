@@ -53,7 +53,7 @@ Download some more! [More Slaves](https://steamcommunity.com/sharedfiles/filedet
 ## Credits
  * Thirite - Original Author, Continued Updates
  * Ziehn - 1.0 Update, Continued Updates
- * MarkSill - 1.1 Update
+ * MarkSill - 1.1 Update, Continued Updates
  * Proxyer - [Japanese Translation](https://steamcommunity.com/sharedfiles/filedetails/?id=1636672484) (Don't know if this works still. Let me know!)
  * Aramati - Portuguese-BR Translation
  * xRg - Russian Translation

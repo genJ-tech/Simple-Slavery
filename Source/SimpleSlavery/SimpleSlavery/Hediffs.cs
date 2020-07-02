@@ -196,21 +196,23 @@ namespace SimpleSlavery {
 				}
 			}
 
-			// Every three hours
-			if (pawn.IsHashIntervalTick(2500 * 3)) {
-				if (hoursSinceLastEscapeAttempt < 72)
-					hoursSinceLastEscapeAttempt += 1;
-				// The pawn will consider escape
-				if (willpower > 0 &&
-					Rand.Chance(0.1f) &&
-					pawn.Faction == Faction.OfPlayer &&
-					pawn.health.capacities.CanBeAwake &&
-					pawn.health.capacities.CapableOf(PawnCapacityDefOf.Consciousness) &&
-					pawn.health.capacities.CapableOf(PawnCapacityDefOf.Moving) &&
-					!pawn.health.Downed &&
-					!pawn.jobs.curDriver.asleep
-					)
-					ConsiderEscape();
+			if (SimpleSlavery.EscapesEnabled) {
+				// Every three hours
+				if (pawn.IsHashIntervalTick(2500 * 3)) {
+					if (hoursSinceLastEscapeAttempt < 72)
+						hoursSinceLastEscapeAttempt += 1;
+					// The pawn will consider escape
+					if (willpower > 0 &&
+						Rand.Chance(0.1f) &&
+						pawn.Faction == Faction.OfPlayer &&
+						pawn.health.capacities.CanBeAwake &&
+						pawn.health.capacities.CapableOf(PawnCapacityDefOf.Consciousness) &&
+						pawn.health.capacities.CapableOf(PawnCapacityDefOf.Moving) &&
+						!pawn.health.Downed &&
+						!pawn.jobs.curDriver.asleep
+						)
+						ConsiderEscape();
+				}
 			}
 		}
 
@@ -223,6 +225,10 @@ namespace SimpleSlavery {
 					severity /= nerveDegree;
 				else if (nerveDegree < 0)
 					severity *= -nerveDegree;
+			}
+
+			if (severity > 0) {
+				severity *= SimpleSlavery.WillpowerFallRate;
 			}
 
 			willpower -= severity * 0.05f;
@@ -300,7 +306,7 @@ namespace SimpleSlavery {
 			Messages.Message("MessageSlaveEscaping".Translate(pawn.Name.ToStringShort), pawn, MessageTypeDefOf.ThreatBig); //Z- NameStringShort -> Name.ToStringShort
 																																																										 //Z- Added Letter to escaping slaves event
 			string text = "LetterIncidentSlaveEscaping".Translate(pawn.Name.ToString());
-			Find.LetterStack.ReceiveLetter("LetterLabelSlaveEscaping".Translate(), text, LetterDefOf.NegativeEvent, null);
+			Find.LetterStack.ReceiveLetter("LetterLabelSlaveEscaping".Translate(), text, LetterDefOf.NegativeEvent, pawn);
 			pawn.SetFaction(actualFaction); // Revert to real faction
 			pawn.guest.SetGuestStatus(slaverFaction, true);
 			pawn.guest.Released = false; // Ensure the slave is not set to released mode

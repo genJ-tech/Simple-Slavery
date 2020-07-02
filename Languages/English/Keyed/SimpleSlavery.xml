@@ -12,8 +12,8 @@
 	<LetterLabelSlaveEscaping>Slave Escaping!</LetterLabelSlaveEscaping>
 
 	<Label_MiserableSlaves>Miserable slaves</Label_MiserableSlaves>
-	<Desc_MiserableSlaves>A colony slave is in a dangerously low mood. A miserable slave is more likely to attempt to break free or attack your colonists.</Desc_MiserableSlaves>
-	<Desc_MiserableSlavesPlural>There are multiple slaves in the colony exhibiting dangerously low moods. Miserable slaves are more likely to attempt to break free or even stage a revolt.</Desc_MiserableSlavesPlural>
+	<Desc_MiserableSlaves>A colony slave, {0}, is in a dangerously low mood. A miserable slave is more likely to attempt to break free or attack your colonists.</Desc_MiserableSlaves>
+	<Desc_MiserableSlavesPlural>There are multiple slaves in the colony exhibiting dangerously low moods. Miserable slaves are more likely to attempt to break free or even stage a revolt. The slaves are:\n\n{0}</Desc_MiserableSlavesPlural>
 
 	<Label_CollarExplosive_Arm>Arm Collar</Label_CollarExplosive_Arm>
 	<Desc_CollarExplosive_Arm>Ready the explosives in the slave collar for detonation.</Desc_CollarExplosive_Arm>
@@ -28,4 +28,13 @@
 
 	<Label_CollarCrypto_Arm>Freeze</Label_CollarCrypto_Arm>
 	<Desc_CollarCrypto_Arm>Freezes wearer in place.</Desc_CollarCrypto_Arm>
+
+	<slaveValueSetting_title>Slave Value</slaveValueSetting_title>
+	<slaveValueSetting_desc>How much a slave counts toward incidents. 0 is not at all, 1 is the same as a regular pawn. Default: 0.5</slaveValueSetting_desc>
+	<escapesEnabledSetting_title>Escapes Enabled</escapesEnabledSetting_title>
+	<escapesEnabledSetting_desc>Whether slaves are able to attempt an escape. Default: true</escapesEnabledSetting_desc>
+	<showSlavesInColonistBar_title>Show Slaves In Colonist Bar</showSlavesInColonistBar_title>
+	<showSlavesInColonistBar_desc>Whether to show slaves in the colonist bar. Default: false</showSlavesInColonistBar_desc>
+	<willpowerFallRate_title>Willpower Fall Rate</willpowerFallRate_title>
+	<willpowerFallRate_desc>How fast slaves' willpower will decrease over time. Default: 1</willpowerFallRate_desc>
 </LanguageData>

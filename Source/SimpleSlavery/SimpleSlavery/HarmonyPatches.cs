@@ -24,6 +24,9 @@ namespace SimpleSlavery {
 		}
 
 		public static List<Pawn> ClearOutSlavesFromColonistBar(List<Pawn> pawns) {
+			if (SimpleSlavery.ShowSlavesInColonistBar) {
+				return pawns;
+			}
 			var newList = new List<Pawn> { };
 			foreach (Pawn pawn in pawns) {
 				if (!SlaveUtility.IsPawnColonySlave(pawn)) {
@@ -342,12 +345,12 @@ namespace SimpleSlavery {
 			List<CodeInstruction> injection;
 
 			// Injection 1
-			injectIndex = ILs.FindIndex(IL => IL.opcode == OpCodes.Call && IL.operand == typeof(PlayerPawnsDisplayOrderUtility).GetMethod("Sort")) - 1;
+			injectIndex = ILs.FindIndex(IL => IL.opcode == OpCodes.Call && (MethodInfo)IL.operand == typeof(PlayerPawnsDisplayOrderUtility).GetMethod("Sort")) - 1;
 			injection = new List<CodeInstruction> {
-					new CodeInstruction(OpCodes.Ldsfld, AccessTools.Field(typeof(ColonistBar), "tmpPawns")),
-					new CodeInstruction(OpCodes.Call, typeof(SS_Helper).GetMethod("ClearOutSlavesFromColonistBar")),
-					new CodeInstruction(OpCodes.Stsfld, AccessTools.Field(typeof(ColonistBar), "tmpPawns")),
-				}; ILs.InsertRange(injectIndex, injection);
+				new CodeInstruction(OpCodes.Ldsfld, AccessTools.Field(typeof(ColonistBar), "tmpPawns")),
+				new CodeInstruction(OpCodes.Call, typeof(SS_Helper).GetMethod("ClearOutSlavesFromColonistBar")),
+				new CodeInstruction(OpCodes.Stsfld, AccessTools.Field(typeof(ColonistBar), "tmpPawns")),
+			}; ILs.InsertRange(injectIndex, injection);
 
 			// Injection 2
 			injectIndex = ILs.FindLastIndex(IL => IL.opcode == OpCodes.Stloc_1);
@@ -423,14 +426,29 @@ namespace SimpleSlavery {
 		}
 	}
 
-	//[HarmonyPatch]
-	//public static class StorytellerUtilityPopulation_AdjustedPopulation_Patch {
-	//	static MethodBase 
-	//}
 	[HarmonyPatch(typeof(StorytellerUtilityPopulation), "AdjustedPopulation", MethodType.Getter)]
 	public static class StorytellerUtilityPopulation_AdjustedPopulation_Patch {
 		static void Postfix(ref float __result) {
-			__result -= ((float)SlaveUtility.GetAllSlaves().Count) * 0.5f;
+			__result -= ((float)SlaveUtility.GetAllSlaves().Count) * SimpleSlavery.SlaveValue;
+		}
+	}
+
+	[HarmonyPatch(typeof(StorytellerUtility), "DefaultThreatPointsNow")]
+	public static class StorytellerUtility_DefaultThreatPointsNow_Patch {
+		static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions) {
+			// Makes slaves count for half
+			List<CodeInstruction> ILs = instructions.ToList();
+			int injectIndex = ILs.FindIndex(IL => IL.opcode == OpCodes.Call && (MethodInfo)IL.operand == typeof(Mathf).GetMethod("Lerp")) + 2;
+			var injection = new List<CodeInstruction> {
+				new CodeInstruction(OpCodes.Ldloc_S, 7),
+				new CodeInstruction(OpCodes.Call, typeof(SimpleSlavery).GetProperty("SlaveValue").GetMethod),
+				new CodeInstruction(OpCodes.Mul),
+				new CodeInstruction(OpCodes.Stloc_S, 7)
+			};
+			ILs.InsertRange(injectIndex, injection);
+			foreach (var IL in ILs) {
+				yield return IL;
+			}
 		}
 	}
 }

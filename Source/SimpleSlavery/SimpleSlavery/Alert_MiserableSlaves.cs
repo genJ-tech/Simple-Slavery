@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Text;
 using RimWorld;
 using Verse;
 
@@ -14,12 +13,18 @@ namespace SimpleSlavery {
 		}
 
 		public override TaggedString GetExplanation() {
-			int num = SlaveUtility.GetSlavesMiserable().Count();
+			var miserable = SlaveUtility.GetSlavesMiserable();
+			int num = miserable.Count;
 			string text = "";
-			if (num > 1)
-				text = "Desc_MiserableSlavesPlural".Translate();
-			else if (num == 1)
-				text = "Desc_MiserableSlaves".Translate();
+			if (num > 1) {
+				StringBuilder stringBuilder = new StringBuilder();
+				foreach (var slave in miserable) {
+					stringBuilder.AppendLine("  - " + slave.NameShortColored.Resolve());
+				}
+				text = "Desc_MiserableSlavesPlural".Translate(stringBuilder).Resolve();
+			} else if (num == 1) {
+				text = "Desc_MiserableSlaves".Translate(miserable[0].NameShortColored.Resolve()).Resolve();
+			}
 
 			return text;
 		}

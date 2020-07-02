@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<HugsLib.UpdateFeatureDef Abstract="true" Name="SSUpdateFeatureBase">
+		<defName>SimpleSlaveryUpdateFeature</defName>
+		<modNameReadable>Simple Slavery</modNameReadable>
+		<linkUrl>https://github.com/MarkSill/Simple-Slavery</linkUrl>
+	</HugsLib.UpdateFeatureDef>
+
+	<HugsLib.UpdateFeatureDef ParentName="SSUpdateFeatureBase">
+		<defName>SimpleSlavery_1_0_0</defName>
+		<assemblyVersion>1.0.0</assemblyVersion>
+		<content>
+			Simple Slavery now has new features!|
+			Saves should be compatible. Ideally, saves shouldn't get broken going forward with any update (but going back might break them, as is the case with this update).|
+			There's a new "Slaves" button at the bottom with all the other buttons.|
+			From there, you can see all each slave's willpower, adjust a slave's shackles, or emancipate them.|
+			There are now mod settings! You can adjust the rate at which willpower decreases, change how much a slave is valued to the storyteller, disable escapes, and show slaves in the colonist bar!|
+			The "miserable slaves" alert will now list which slaves are miserable.
+			If you have a mod that integrates with Simple Slavery and makes use of a slave's willpower, it will need to be updated since willpower is now a float between 0f and 1f (as opposed to 0f and 100f). I don't know of any mods this would affect, but there might be some out there.
+		</content>
+	</HugsLib.UpdateFeatureDef>
+</Defs>
