@@ -52,11 +52,20 @@ namespace SimpleSlavery {
 		public override void WorldLoaded() {
 			// Update willpower from old range to new
 			if (SlaveUtility.SlaveData.Compat < 1) {
-				foreach (var slave in SlaveUtility.GetSlaves()) {
-					var hediff = SlaveUtility.GetEnslavedHediff(slave);
-					hediff.SetWillpowerDirect(hediff.SlaveWillpower / 100f);
+				foreach (var pawn in Find.World.worldPawns.AllPawnsAliveOrDead) {
+					UpdateSlaveHediff(pawn);
+				}
+				foreach (var map in Find.Maps) {
+					foreach (var pawn in map.mapPawns.AllPawns) {
+						UpdateSlaveHediff(pawn);
+					}
 				}
 			}
+		}
+
+		private void UpdateSlaveHediff(Pawn pawn) {
+			var hediff = SlaveUtility.GetEnslavedHediff(pawn);
+			hediff?.SetWillpowerDirect(hediff.SlaveWillpower / 100f);
 		}
 	}
 }
