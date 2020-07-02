@@ -53,19 +53,23 @@ namespace SimpleSlavery {
 			// Update willpower from old range to new
 			if (SlaveUtility.SlaveData.Compat < 1) {
 				foreach (var pawn in Find.World.worldPawns.AllPawnsAliveOrDead) {
-					UpdateSlaveHediff(pawn);
+					UpdateSlaveHediffs(pawn);
 				}
 				foreach (var map in Find.Maps) {
 					foreach (var pawn in map.mapPawns.AllPawns) {
-						UpdateSlaveHediff(pawn);
+						UpdateSlaveHediffs(pawn);
 					}
 				}
 			}
 		}
 
-		private void UpdateSlaveHediff(Pawn pawn) {
+		private void UpdateSlaveHediffs(Pawn pawn) {
 			var hediff = SlaveUtility.GetEnslavedHediff(pawn);
 			hediff?.SetWillpowerDirect(hediff.SlaveWillpower / 100f);
+			var memoryHediff = SlaveUtility.GetSlaveMemoryHediff(pawn);
+			if (memoryHediff != null) {
+				memoryHediff.savedWillpower /= 100f;
+			}
 		}
 	}
 }

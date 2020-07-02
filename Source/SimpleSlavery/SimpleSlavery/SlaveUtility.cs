@@ -35,6 +35,10 @@ namespace SimpleSlavery {
 			return pawn.health.hediffSet.GetFirstHediffOfDef(SS_HediffDefOf.Enslaved) as Hediff_Enslaved;
 		}
 
+		public static Hediff_SlaveMemory GetSlaveMemoryHediff(Pawn pawn) {
+			return pawn.health.hediffSet.GetFirstHediffOfDef(SS_HediffDefOf.SlaveMemory) as Hediff_SlaveMemory;
+		}
+
 		public static bool IsSlaveCollar(Apparel apparel) {
 			if (apparel == null) { return false; }
 			return apparel.def.defName.Contains("SlaveCollar");
