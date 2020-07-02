@@ -92,57 +92,6 @@ namespace SimpleSlavery {
 		}
 	}
 
-	// Adds the "emancipate" and "shackle" toggles to slaves' gizmos
-	[HarmonyPatch(typeof(Pawn), "GetGizmos")]
-	public static class Pawn_GetGizmos_Patch {
-		[HarmonyPostfix]
-		public static void Pawn_GetGizmos_Postfix(Pawn __instance, ref IEnumerable<Gizmo> __result) {
-			__result = __result.Concat<Gizmo>(slaveGizmos(__instance));
-		}
-
-		internal static IEnumerable<Gizmo> slaveGizmos(Pawn pawn) {
-			// Return slave apparel gizmos when escaping
-			if (pawn.apparel != null) {
-				for (int i = 0; i < pawn.apparel.WornApparel.Count; i++) {
-
-					var slaveApparel = pawn.apparel.WornApparel[i] as SlaveApparel;
-					if (slaveApparel != null) {
-						foreach (Gizmo g in slaveApparel.SlaveGizmos()) yield return g;
-					}
-				}
-			}
-
-			if (SlaveUtility.IsPawnColonySlave(pawn)) {
-				var freeSlave = new Command_Toggle();
-				Func<bool> toBeFreed = () => SlaveUtility.GetEnslavedHediff(pawn).toBeFreed;
-				freeSlave.isActive = toBeFreed;
-				freeSlave.defaultLabel = "LabelWordEmancipate".Translate();
-				freeSlave.defaultDesc = "CommandDescriptionEmancipate".Translate(pawn.Name.ToStringShort); //Z- NameStringShort -> Name.ToStringShort
-				freeSlave.toggleAction = delegate {
-					SlaveUtility.GetEnslavedHediff(pawn).toBeFreed = !SlaveUtility.GetEnslavedHediff(pawn).toBeFreed;
-					//Log.Message("Free slave " + pawn.Name.ToStringShort + ": " + SlaveUtility.GetEnslavedHediff(pawn).toBeFreed.ToStringYesNo()); //Z- NameStringShort -> Name.ToStringShort
-				};
-				freeSlave.alsoClickIfOtherInGroupClicked = true;
-				freeSlave.activateSound = SoundDefOf.Click;
-				freeSlave.icon = ContentFinder<Texture2D>.Get("UI/Commands/Emancipate", true);
-				yield return freeSlave;
-
-				var shackleSlave = new Command_Toggle();
-				shackleSlave.isActive = () => SlaveUtility.GetEnslavedHediff(pawn).shackledGoal;
-				shackleSlave.defaultLabel = "LabelWordShackle".Translate();
-				shackleSlave.defaultDesc = "CommandDescriptionShackle".Translate(pawn.Name.ToStringShort); //Z- NameStringShort -> Name.ToStringShort
-				shackleSlave.toggleAction = delegate {
-					SlaveUtility.GetEnslavedHediff(pawn).shackledGoal = !SlaveUtility.GetEnslavedHediff(pawn).shackledGoal;
-					//Log.Message("Shackle slave " + pawn.Name.ToStringShort + ": " + SlaveUtility.GetEnslavedHediff(pawn).toBeFreed.ToStringYesNo()); //Z- NameStringShort -> Name.ToStringShort
-				};
-				shackleSlave.alsoClickIfOtherInGroupClicked = true;
-				shackleSlave.activateSound = SoundDefOf.Click;
-				shackleSlave.icon = ContentFinder<Texture2D>.Get("UI/Commands/Shackle", true);
-				yield return shackleSlave;
-			}
-		}
-	}
-
 	// Changes the behaviour of restraints to acknowledge shackled slaves
 	[HarmonyPatch(typeof(RestraintsUtility), "InRestraints")]
 	public static class RestraintUtility_Patch {
