@@ -87,7 +87,7 @@ namespace SimpleSlavery {
 							Log.Message("Enslaved " + Victim.Name.ToStringShort); //Z- NameStringShort -> Name.ToStringShort
 							SlaveUtility.EnslavePawn(Victim, collar);
 							if (slaveCollar.Stuff.stuffProps.categories.Contains(StuffCategoryDefOf.Metallic) && !Victim.health.hediffSet.HasHediff(SS_HediffDefOf.SlaveMemory))
-								SlaveUtility.GetEnslavedHediff(Victim).TakeWillpowerHit(150);
+								SlaveUtility.GetEnslavedHediff(Victim).TakeWillpowerHit(1.5f);
 							Messages.Message("EnslavedPrisonerSuccess".Translate(pawn.Name.ToStringShort, Victim.Name.ToStringShort), MessageTypeDefOf.PositiveEvent); //Z- NameStringShort -> Name.ToStringShort
 							AddEndCondition(() => JobCondition.Succeeded);
 						} else {

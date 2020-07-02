@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<PawnColumnDef>
+		<defName>Willpower</defName>
+		<workerClass>SimpleSlavery.UI.PawnColumnWorker_Willpower</workerClass>
+		<sortable>true</sortable>
+		<label>willpower</label>
+		<headerTip>The slave's willpower. When it reaches 0%, the slave is broken.</headerTip>
+	</PawnColumnDef>
+
+	<PawnColumnDef>
+		<defName>Emancipate</defName>
+		<workerClass>SimpleSlavery.UI.PawnColumnWorker_Emancipate</workerClass>
+		<sortable>true</sortable>
+		<headerIcon>UI/Icons/Emancipate</headerIcon>
+		<headerTip>Emancipate and release slaves.</headerTip>
+		<paintable>true</paintable>
+	</PawnColumnDef>
+
+	<PawnColumnDef>
+		<defName>AdjustShackles</defName>
+		<workerClass>SimpleSlavery.UI.PawnColumnWorker_AdjustShackles</workerClass>
+		<sortable>true</sortable>
+		<headerIcon>UI/Icons/Shackle</headerIcon>
+		<headerTip>Whether to add or remove shackles on the slaves.</headerTip>
+		<paintable>true</paintable>
+	</PawnColumnDef>
+</Defs>

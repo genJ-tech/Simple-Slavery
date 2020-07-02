@@ -19,13 +19,13 @@ namespace SimpleSlavery {
 		protected override ThoughtState CurrentStateInternal(Pawn p) {
 			if (p.health.hediffSet.HasHediff(SS_HediffDefOf.Enslaved)) {
 				Hediff_Enslaved enslaved_def = SlaveUtility.GetEnslavedHediff(p);
-				if (enslaved_def.ageTicks < 2500 * 3.5f && enslaved_def.SlaveWillpower > 0) // Gets some flavour text just after being enslaved
+				if (enslaved_def.ageTicks < 2500 * 3.5f && enslaved_def.SlaveWillpower > 0f) // Gets some flavour text just after being enslaved
 					return ThoughtState.ActiveAtStage(0);
-				if (enslaved_def.SlaveWillpower > 75)
+				if (enslaved_def.SlaveWillpower > 0.75f)
 					return ThoughtState.ActiveAtStage(1);
-				else if (enslaved_def.SlaveWillpower > 50)
+				else if (enslaved_def.SlaveWillpower > 0.5f)
 					return ThoughtState.ActiveAtStage(2);
-				else if (enslaved_def.SlaveWillpower > 25 || (enslaved_def.SlaveWillpower <= 50 && IsSteadfast(p)))
+				else if (enslaved_def.SlaveWillpower > 0.25f || (enslaved_def.SlaveWillpower <= 0.5f && IsSteadfast(p)))
 					return ThoughtState.ActiveAtStage(3);
 				else if (Math.Round(enslaved_def.SlaveWillpower) <= 1)
 					return ThoughtState.ActiveAtStage(4);

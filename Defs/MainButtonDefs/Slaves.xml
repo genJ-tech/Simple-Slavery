@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<MainButtonDef>
+		<defName>SlavesTab</defName>
+		<label>slaves</label>
+		<description>List slaves in the colony.</description>
+		<tabWindowClass>SimpleSlavery.UI.MainTabWindow_Slaves</tabWindowClass>
+		<order>15</order>
+	</MainButtonDef>
+</Defs>

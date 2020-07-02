@@ -48,7 +48,7 @@ namespace SimpleSlavery {
 		}
 
 		public void SaveMemory() {
-			if (pawn.workSettings == null) {
+			if (pawn.workSettings == null) { // Caused by an issue in Prison Labor, see https://github.com/Aviuz/PrisonLabor/issues/137
 				pawn.workSettings = new Pawn_WorkSettings(pawn);
 				pawn.workSettings.EnableAndInitialize();
 			}
@@ -84,11 +84,11 @@ namespace SimpleSlavery {
 
 	public class Hediff_Enslaved : HediffWithComps {
 		const int minHoursBetweenEscapeAttempts = 24;
-		const int maxWillpower = 100;
+		const float maxWillpower = 1;
 
 		public Faction actualFaction = null;
 		public Faction slaverFaction = null;
-		float willpower = 100;
+		float willpower = maxWillpower;
 		int hoursSinceLastEscapeAttempt = 6;
 		public bool waitingInJail = false;
 		public bool isMovingToEscape = false;
@@ -111,7 +111,7 @@ namespace SimpleSlavery {
 			if (pawn.health.hediffSet.HasHediff(SS_HediffDefOf.SlaveMemory)) {
 				// Re-apply all player settings that get reset upon leaving faction
 				var memory = pawn.health.hediffSet.GetFirstHediffOfDef(SS_HediffDefOf.SlaveMemory) as Hediff_SlaveMemory;
-				if (pawn.workSettings == null) {
+				if (pawn.workSettings == null) { // Caused by an issue in Prison Labor, see https://github.com/Aviuz/PrisonLabor/issues/137
 					pawn.workSettings = new Pawn_WorkSettings(pawn);
 					pawn.workSettings.EnableAndInitialize();
 				}
@@ -158,7 +158,7 @@ namespace SimpleSlavery {
 				SlaveAgain();
 				// Take a willpower hit, but only if we were free for a while
 				if (pawn.health.hediffSet.GetFirstHediffOfDef(SS_HediffDefOf.SlaveMemory).ageTicks > 10000) {
-					TakeWillpowerHit(50);
+					TakeWillpowerHit(0.5f);
 				}
 			}
 
@@ -172,7 +172,7 @@ namespace SimpleSlavery {
 			if (pawn.IsHashIntervalTick(60000)) {
 				// Make sure we're not already at rock bottom
 				if (willpower > 0) {
-					TakeWillpowerHit(10);
+					TakeWillpowerHit(0.1f);
 				}
 			}
 
@@ -222,16 +222,16 @@ namespace SimpleSlavery {
 				if (nerveDegree > 0)
 					severity /= nerveDegree;
 				else if (nerveDegree < 0)
-					severity *= nerveDegree;
+					severity *= -nerveDegree;
 			}
 
-			willpower -= (float)Math.Abs(severity * 0.05);
+			willpower -= severity * 0.05f;
 			if (willpower < 0)
 				willpower = 0;
 			//Log.Message ("DEBUG: Slave " + pawn.NameStringShort + " Willpower = " + willpower);
 		}
 
-		public void SetWillpowerDirect(int newWill) {
+		public void SetWillpowerDirect(float newWill) {
 			willpower = Math.Min(Math.Max(newWill, 0), maxWillpower);
 		}
 
@@ -244,35 +244,37 @@ namespace SimpleSlavery {
 				//if (true) { // debugging for fast escape attempts
 				if (hoursSinceLastEscapeAttempt > minHoursBetweenEscapeAttempts * moodFactor) {
 
-					int combined_bonus = 0;
+					float combined_bonus = 0;
 					// If we're not in a "room" aka free to run outside, then chance improves
 					if (pawn.GetRoom().TouchesMapEdge)
-						combined_bonus += 10;
+						combined_bonus += 0.1f;
 					// Bonus from being outside but walled in (for example, a courtyard)
 					else if (pawn.GetRoom().PsychologicallyOutdoors)
-						combined_bonus += 5;
+						combined_bonus += 0.05f;
 					// Bonus from not wearing slave collar
 					if (SlaveUtility.HasSlaveCollar(pawn)) {
 						var collar = SlaveUtility.GetSlaveCollar(pawn);
-						var collarMalus = new Dictionary<TechLevel, int>{
-							{TechLevel.Neolithic, 10},
-							{TechLevel.Medieval, 20},
-							{TechLevel.Industrial, 35},
-							{TechLevel.Spacer, 50},
-														{TechLevel.Archotech, 75}
+						var collarMalus = new Dictionary<TechLevel, float>{
+							{TechLevel.Neolithic, 0.1f},
+							{TechLevel.Medieval, 0.2f},
+							{TechLevel.Industrial, 0.35f},
+							{TechLevel.Spacer, 0.5f},
+														{TechLevel.Archotech, 0.75f}
 						};
 						if (collarMalus.ContainsKey(collar.def.techLevel))
 							combined_bonus -= collarMalus[collar.def.techLevel];
 					}
 					if (pawn.story.traits.HasTrait(TraitDefOf.Nerves))
-						combined_bonus += pawn.story.traits.GetTrait(TraitDefOf.Nerves).Degree * 10;
+						combined_bonus += ((float)pawn.story.traits.GetTrait(TraitDefOf.Nerves).Degree) / 10f;
 					// Health malus
-					combined_bonus -= (int)((1 - pawn.health.summaryHealth.SummaryHealthPercent) * 50);
+					combined_bonus -= (1f - pawn.health.summaryHealth.SummaryHealthPercent) * 0.5f;
+					//combined_bonus -= (float)((1 - pawn.health.summaryHealth.SummaryHealthPercent) * 50);
 					// Take hours since last attempt into account
-					combined_bonus += (int)Math.Round((Math.Max(hoursSinceLastEscapeAttempt, 72) * (willpower / 100)) * 0.2083f);
+					combined_bonus += Math.Max(hoursSinceLastEscapeAttempt, 72) * willpower * 0.2083f;
+					//combined_bonus += (int)Math.Round((Math.Max(hoursSinceLastEscapeAttempt, 72) * (willpower / 100)) * 0.2083f);
 
 					// Do a willpower check
-					if (Math.Round(willpower) + combined_bonus > Rand.Range(1, maxWillpower)) {
+					if (willpower + combined_bonus > Rand.Range(0f, maxWillpower)) {
 						if (pawn.GetRoom().TouchesMapEdge)
 							TryToEscape();
 						else
@@ -321,7 +323,7 @@ namespace SimpleSlavery {
 			}
 			pawn.guest.SetGuestStatus(null);
 			LoadMemory();
-			TakeWillpowerHit(100);
+			TakeWillpowerHit(1f);
 			hoursSinceLastEscapeAttempt = 0;
 			waitingInJail = false;
 		}
@@ -352,7 +354,7 @@ namespace SimpleSlavery {
 			base.ExposeData();
 			Scribe_References.Look<Faction>(ref slaverFaction, "slaverFaction");
 			Scribe_References.Look<Faction>(ref actualFaction, "actualFaction");
-			Scribe_Values.Look<float>(ref willpower, "slaveWillpower", 100);
+			Scribe_Values.Look<float>(ref willpower, "slaveWillpower", 1f);
 			Scribe_Values.Look<int>(ref hoursSinceLastEscapeAttempt, "escapeHours", 3);
 			Scribe_Values.Look<bool>(ref waitingInJail, "waitingInJail", false);
 			Scribe_Values.Look<bool>(ref toBeFreed, "toBeFreed", false);

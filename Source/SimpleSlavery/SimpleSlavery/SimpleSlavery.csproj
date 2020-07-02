@@ -52,12 +52,18 @@
     <Compile Include="DefOf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleSlavery.cs" />
+    <Compile Include="SlaveUtility.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_ExplosiveCollar.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_Enslaved.cs" />
     <Compile Include="HarmonyPatches.cs" />
     <Compile Include="JobDrivers.cs" />
     <Compile Include="Hediffs.cs" />
     <Compile Include="ThoughtWorkers\ThoughtWorker_SlaveColony.cs" />
+    <Compile Include="UI\MainTabWindow_Slaves.cs" />
+    <Compile Include="UI\PawnColumnWorker_AdjustShackles.cs" />
+    <Compile Include="UI\PawnColumnWorker_Emancipate.cs" />
+    <Compile Include="UI\PawnColumnWorker_Willpower.cs" />
+    <Compile Include="WorldSlaveData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="0Harmony, Version=1.2.0.1, Culture=neutral, processorArchitecture=MSIL">
@@ -87,6 +93,16 @@
     <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

@@ -75,4 +75,12 @@ namespace SimpleSlavery {
 
 		public static WorkGiverDef DoShackling;
 	}
+
+	[DefOf]
+	public static class SS_PawnTableDefOf {
+		static SS_PawnTableDefOf() {
+			DefOfHelper.EnsureInitializedInCtor(typeof(PawnTableDefOf));
+		}
+		public static PawnTableDef Slaves;
+	}
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<PawnTableDef>
+		<defName>Slaves</defName>
+		<workerClass>PawnTable_PlayerPawns</workerClass>
+		<columns>
+			<li>Label</li>
+			<li>Willpower</li>
+			<li>GapTiny</li>
+			<li>Emancipate</li>
+			<li>AdjustShackles</li>
+			<li>RemainingSpace</li>
+		</columns>
+	</PawnTableDef>
+</Defs>

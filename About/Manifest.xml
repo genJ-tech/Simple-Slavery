@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Manifest>
 	<identifier>SimpleSlavery</identifier>
-	<version>0.1.3</version>
+	<version>1.0.0</version>
 	<dependencies>
 		<li>Harmony</li>
 		<li>HugsLib</li>
 	</dependencies>
 	<downloadUri>https://github.com/MarkSill/Simple-Slavery/releases/latest</downloadUri>
-	<manifestUri>https://cdn.jsdelivr.net/gh/MarkSill/Simple-Slavery/About/Manifest.xml</manifestUri>
+	<manifestUri>https://cdn.jsdelivr.net/gh/MarkSill/Simple-Slavery@latest/About/Manifest.xml</manifestUri>
 </Manifest>

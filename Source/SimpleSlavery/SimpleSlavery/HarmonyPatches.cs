@@ -2,7 +2,6 @@
 using HarmonyLib;
 using RimWorld;
 using Verse;
-using HugsLib;
 using System.Reflection;
 using Verse.AI;
 using System.Collections.Generic;
@@ -12,38 +11,6 @@ using System.Reflection.Emit;
 using RimWorld.Planet;
 
 namespace SimpleSlavery {
-	public class SlaveryBase : ModBase {
-		public override string ModIdentifier {
-			get {
-				return "SimpleSlavery";
-			}
-		}
-	}
-
-	[StaticConstructorOnStartup]
-	internal static class HarmonyPatches {
-
-		static HarmonyPatches() {
-			var harmonyInstance = new Harmony("rimworld.thirite.simpleslavery");
-			Harmony.DEBUG = false;
-			// Break Risk Alert patches
-			MethodInfo breakRiskAlertUtility_transpiler = AccessTools.Method(typeof(BRAU_Patches), "BreakRiskAlertUtility_Transpiler");
-			harmonyInstance.Patch(typeof(BreakRiskAlertUtility).GetProperty("PawnsAtRiskExtreme").GetMethod, null, null, new HarmonyMethod(breakRiskAlertUtility_transpiler));
-			harmonyInstance.Patch(typeof(BreakRiskAlertUtility).GetProperty("PawnsAtRiskMajor").GetMethod, null, null, new HarmonyMethod(breakRiskAlertUtility_transpiler));
-			harmonyInstance.Patch(typeof(BreakRiskAlertUtility).GetProperty("PawnsAtRiskMinor").GetMethod, null, null, new HarmonyMethod(breakRiskAlertUtility_transpiler));
-			// Alert Thought patch
-			MethodInfo alertThought_transpiler = AccessTools.Method(typeof(Alert_Thought_Patch), "Alert_Thought_Transpiler");
-			harmonyInstance.Patch(typeof(Alert_Thought).GetProperty("AffectedPawns", AccessTools.all).GetMethod, null, null, new HarmonyMethod(alertThought_transpiler));
-			// Colonist Bar
-			MethodInfo checkRecacheEntries_transpiler = AccessTools.Method(typeof(CheckRecacheEntries_Patch), "CheckRecacheEntries_Transpiler");
-			harmonyInstance.Patch(typeof(ColonistBar).GetMethod("CheckRecacheEntries", AccessTools.all), null, null, new HarmonyMethod(checkRecacheEntries_transpiler));
-			// Death Thoughts
-			//MemoryThoughtHandler_TryGainMemory_Transpiler
-			MethodInfo deathThought_postfix = AccessTools.Method(typeof(MemoryThoughtHandler_Patch), "TryGainMemory_Postfix");
-			harmonyInstance.Patch(AccessTools.Method(typeof(MemoryThoughtHandler), "TryGainMemory", new[] { typeof(Thought_Memory), typeof(Pawn) }), null, new HarmonyMethod(deathThought_postfix), null);
-		}
-	}
-
 	public static class SS_Helper {
 		public static float PrisonerInteractionModeDefCount() {
 			return DefDatabase<PrisonerInteractionModeDef>.DefCount * 32f;
@@ -103,7 +70,7 @@ namespace SimpleSlavery {
 				// Is the beating coming from the faction owning the slave?
 				if (dinfo.Instigator != null)
 					if (dinfo.Instigator.Faction == enslaved_def.slaverFaction) {
-						enslaved_def.TakeWillpowerHit(dinfo.Amount);
+						enslaved_def.TakeWillpowerHit(dinfo.Amount / 100f);
 					}
 			}
 		}
@@ -316,7 +283,7 @@ namespace SimpleSlavery {
 				// Add the enslaved tracker
 				__instance.health.AddHediff(SS_HediffDefOf.Enslaved);
 				// Set willpower to zero
-				SlaveUtility.GetEnslavedHediff(__instance).SetWillpowerDirect(0);
+				SlaveUtility.GetEnslavedHediff(__instance).SetWillpowerDirect(0f);
 				// Re-force wearing of the collar so the new slave does not drop it, freeing themselves
 				__instance.outfits.forcedHandler.SetForced(__instance.apparel.WornApparel.Find(SlaveUtility.IsSlaveCollar), true);
 			}
@@ -342,9 +309,9 @@ namespace SimpleSlavery {
 	public static class SS_ArrestChance {
 		public static float ArrestChance(Pawn pawn) {
 			if (pawn.mindState.mentalStateHandler.CurStateDef == SS_MentalStateDefOf.CryptoStasis)
-				return 1;
+				return 1f;
 			if (SlaveUtility.IsPawnColonySlave(pawn))
-				return 1 - SlaveUtility.GetEnslavedHediff(pawn).SlaveWillpower / 100;
+				return 1f - SlaveUtility.GetEnslavedHediff(pawn).SlaveWillpower;
 			else
 				return 0.6f;
 		}
@@ -396,10 +363,13 @@ namespace SimpleSlavery {
 		}
 	}
 
-	public static class Alert_Thought_Patch {
-		static IEnumerable<CodeInstruction> Alert_Thought_Transpiler(IEnumerable<CodeInstruction> instructions) {
-			//Type iterator = typeof(Alert_Thought).GetNestedType("<AffectedPawns>c__Iterator0", AccessTools.all);
-			//FieldInfo pawn = AccessTools.Field(iterator, "<p>__1");
+	[HarmonyPatch]
+	public static class Alert_Thought_AffectedPawns_Patch {
+		static MethodBase TargetMethod() {
+			return typeof(Alert_Thought).GetProperty("AffectedPawns", AccessTools.all).GetMethod;
+		}
+
+		static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions) {
 			List<CodeInstruction> ILs = instructions.ToList();
 			int injectIndex = ILs.FindIndex(IL => IL.opcode == OpCodes.Bne_Un_S) + 1;
 			var jump = (Label)ILs.Find(il => il.opcode == OpCodes.Bne_Un_S).operand;
@@ -414,8 +384,9 @@ namespace SimpleSlavery {
 		}
 	}
 
-	public static class CheckRecacheEntries_Patch {
-		static IEnumerable<CodeInstruction> CheckRecacheEntries_Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator ILgen) {
+	[HarmonyPatch(typeof(ColonistBar), "CheckRecacheEntries")]
+	public static class ColonistBar_CheckRecacheEntries_Patch {
+		static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator ILgen) {
 			List<CodeInstruction> ILs = instructions.ToList();
 
 			int injectIndex;
@@ -452,9 +423,8 @@ namespace SimpleSlavery {
 		}
 	}
 
-	public static class BRAU_Patches {
-
-		static IEnumerable<CodeInstruction> BreakRiskAlertUtility_Transpiler(IEnumerable<CodeInstruction> instructions) {
+	internal static class BreakRiskAlertUtilityTranspilerHelper {
+		public static IEnumerable<CodeInstruction> Transpile(IEnumerable<CodeInstruction> instructions) {
 			List<CodeInstruction> ILs = instructions.ToList();
 			int injectIndex = ILs.FindIndex(IL => IL.opcode == OpCodes.Brfalse_S) + 1;
 			var jump = (Label)ILs.Find(IL => IL.opcode == OpCodes.Brfalse_S).operand;
@@ -469,8 +439,22 @@ namespace SimpleSlavery {
 		}
 	}
 
+	[HarmonyPatch]
+	public static class BreakRiskAlertUtility_PawnsAtRisk_Patch {
+		static IEnumerable<MethodBase> TargetMethods() {
+			yield return typeof(BreakRiskAlertUtility).GetProperty("PawnsAtRiskExtreme").GetMethod;
+			yield return typeof(BreakRiskAlertUtility).GetProperty("PawnsAtRiskMajor").GetMethod;
+			yield return typeof(BreakRiskAlertUtility).GetProperty("PawnsAtRiskMinor").GetMethod;
+		}
+
+		static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions) {
+			return BreakRiskAlertUtilityTranspilerHelper.Transpile(instructions);
+		}
+	}
+
+	[HarmonyPatch(typeof(MemoryThoughtHandler), "TryGainMemory", new[] { typeof(Thought_Memory), typeof(Pawn) })]
 	public static class MemoryThoughtHandler_Patch {
-		public static void TryGainMemory_Postfix(ref Thought_Memory newThought, ref Pawn otherPawn) {
+		public static void Postfix(ref Thought_Memory newThought, ref Pawn otherPawn) {
 			Pawn pawn = newThought.pawn;
 			ThoughtDef knowColonistDied = ThoughtDefOf.KnowColonistDied;
 			ThoughtDef thoughtToGet = SS_ThoughtDefOf.KnowSlaveDied;
