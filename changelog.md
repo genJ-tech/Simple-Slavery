@@ -1,4 +1,7 @@
 # Simple Slavery Changelog
+## v1.0.3
+* Actually fix collar buttons disappearing from slaves when escaping.
+
 ## v1.0.2
 * Fix collar buttons disappearing when slaves are escaping?
 

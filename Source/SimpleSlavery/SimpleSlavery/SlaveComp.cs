@@ -15,15 +15,6 @@ namespace SimpleSlavery {
 			}
 			var pawn = parent as Pawn;
 
-			if (pawn.apparel != null) {
-				foreach (var apparel in pawn.apparel.WornApparel) {
-					var slaveApparel = apparel as SlaveApparel;
-					if (slaveApparel != null) {
-						foreach (var g in slaveApparel.SlaveGizmos()) yield return g;
-					}
-				}
-			}
-
 			if (SlaveUtility.IsPawnColonySlave(pawn)) {
 				var hediff = SlaveUtility.GetEnslavedHediff(pawn);
 

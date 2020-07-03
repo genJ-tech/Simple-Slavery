@@ -451,5 +451,23 @@ namespace SimpleSlavery {
 			}
 		}
 	}
+
+	[HarmonyPatch(typeof(Pawn), "GetGizmos")]
+	public static class Pawn_GetGizmos_Patch { 
+		static void Postfix(Pawn __instance, ref IEnumerable<Gizmo> __result) {
+			__result = __result.Concat(SlaveGizmos(__instance));
+		}
+
+		internal static IEnumerable<Gizmo> SlaveGizmos(Pawn pawn) {
+			if (pawn.apparel != null) {
+				foreach (var apparel in pawn.apparel.WornApparel) {
+					var slaveApparel = apparel as SlaveApparel;
+					if (slaveApparel != null) {
+						foreach (var g in slaveApparel.SlaveGizmos()) yield return g;
+					}
+				}
+			}
+		}
+	}
 }
 
