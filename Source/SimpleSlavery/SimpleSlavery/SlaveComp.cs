@@ -10,9 +10,22 @@ using Verse;
 namespace SimpleSlavery {
 	class SlaveComp : ThingComp {
 		public override IEnumerable<Gizmo> CompGetGizmosExtra() {
-			if (parent != null && SlaveUtility.IsPawnColonySlave(parent as Pawn)) {
-				var pawn = parent as Pawn;
-				var hediff = SlaveUtility.GetEnslavedHediff(parent as Pawn);
+			if (parent == null) {
+				yield break;
+			}
+			var pawn = parent as Pawn;
+
+			if (pawn.apparel != null) {
+				foreach (var apparel in pawn.apparel.WornApparel) {
+					var slaveApparel = apparel as SlaveApparel;
+					if (slaveApparel != null) {
+						foreach (var g in slaveApparel.SlaveGizmos()) yield return g;
+					}
+				}
+			}
+
+			if (SlaveUtility.IsPawnColonySlave(pawn)) {
+				var hediff = SlaveUtility.GetEnslavedHediff(pawn);
 
 				var freeSlave = new Command_Toggle();
 				freeSlave.isActive = () => hediff.toBeFreed;
@@ -33,15 +46,6 @@ namespace SimpleSlavery {
 				shackleSlave.activateSound = SoundDefOf.Click;
 				shackleSlave.icon = ContentFinder<Texture2D>.Get("UI/Commands/Shackle", true);
 				yield return shackleSlave;
-
-				if (pawn.apparel != null) {
-					foreach (var apparel in pawn.apparel.WornApparel) {
-						var slaveApparel = apparel as SlaveApparel;
-						if (slaveApparel != null) {
-							foreach (var g in slaveApparel.SlaveGizmos()) yield return g;
-						}
-					}
-				}
 			}
 		}
 	}

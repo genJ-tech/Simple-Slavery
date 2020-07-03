@@ -1,4 +1,7 @@
 # Simple Slavery Changelog
+## v1.0.2
+* Fix collar buttons disappearing when slaves are escaping?
+
 ## v1.0.1
 * Fix not being able to use special collar abilities (i.e. electric collar).
 
