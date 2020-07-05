@@ -1,4 +1,7 @@
 # Simple Slavery Changelog
+## v1.0.4
+* Fix prisoners and animals not showing up for trades.
+
 ## v1.0.3
 * Actually fix collar buttons disappearing from slaves when escaping.
 

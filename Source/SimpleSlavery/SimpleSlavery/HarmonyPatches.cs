@@ -186,6 +186,9 @@ namespace SimpleSlavery {
 				if (SlaveUtility.IsPawnColonySlave(pawn) && !previous.Contains(pawn))
 					yield return pawn;
 			}
+			foreach (Pawn pawn in previous) {
+				yield return pawn;
+			}
 		}
 
 		[HarmonyPostfix]
