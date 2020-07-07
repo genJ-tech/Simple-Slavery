@@ -6,6 +6,7 @@
 		<description>hidden</description>
 		<hediffClass>SimpleSlavery.Hediff_Enslaved</hediffClass>
 		<defaultLabelColor>(0.65, 0.3, 0.9)</defaultLabelColor>
+		<isBad>false</isBad>
 	</HediffDef>
 
 	<HediffDef>
@@ -13,6 +14,7 @@
 		<label>slave memory (hidden)</label>
 		<description>hidden</description>
 		<hediffClass>SimpleSlavery.Hediff_SlaveMemory</hediffClass>
+		<isBad>false</isBad>
 	</HediffDef>
 
 	<HediffDef>
@@ -20,6 +22,7 @@
 		<label>fixes specific bug</label>
 		<description>fixes specific bug</description>
 		<hediffClass>SimpleSlavery.Hediff_EmancipateFix</hediffClass>
+		<isBad>false</isBad>
 	</HediffDef>
 
 	<HediffDef>

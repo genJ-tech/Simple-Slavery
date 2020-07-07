@@ -1,4 +1,7 @@
 # Simple Slavery Changelog
+## v1.0.5
+* Fix some mods removing enslaved hediffs since they're considered bad.
+
 ## v1.0.4
 * Fix prisoners and animals not showing up for trades.
 
