@@ -42,6 +42,9 @@ namespace SimpleSlavery {
 		// Saved willpower
 		public float savedWillpower = 0;
 
+		// Whether the slave was last controlled by the colony
+		public bool wasColonySlave = false;
+
 		public override void PostMake() {
 			base.PostMake();
 			SaveMemory();
@@ -72,6 +75,10 @@ namespace SimpleSlavery {
 			Scribe_Collections.Look<WorkTypeDef, int>(ref savedWorkPriorities, "savedWorkPriorities");
 			Scribe_References.Look<Area>(ref savedRestrictedArea, "savedRestrictedArea");
 			Scribe_Values.Look<sbyte>(ref savedMedicalCare, "savedMedicalCare");
+			Scribe_Values.Look(ref wasColonySlave, "wasColonySlave");
+			if (pawn != null && SlaveUtility.IsPawnColonySlave(pawn)) {
+				wasColonySlave = true;
+			}
 		}
 
 		public override bool Visible {

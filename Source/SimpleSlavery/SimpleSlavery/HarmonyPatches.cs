@@ -241,6 +241,8 @@ namespace SimpleSlavery {
 				SlaveUtility.GetEnslavedHediff(__instance).SetWillpowerDirect(0f);
 				// Re-force wearing of the collar so the new slave does not drop it, freeing themselves
 				__instance.outfits.forcedHandler.SetForced(__instance.apparel.WornApparel.Find(SlaveUtility.IsSlaveCollar), true);
+			} else if (action == TradeAction.PlayerSells && SlaveUtility.IsPawnColonySlave(__instance)) {
+				SlaveUtility.GetSlaveMemoryHediff(__instance).wasColonySlave = false; // Make sold slaves not count as previously being controlled by the colony
 			}
 		}
 	}
@@ -462,6 +464,10 @@ namespace SimpleSlavery {
 		}
 
 		internal static IEnumerable<Gizmo> SlaveGizmos(Pawn pawn) {
+			var slaveMemory = SlaveUtility.GetSlaveMemoryHediff(pawn);
+			if (slaveMemory == null || !slaveMemory.wasColonySlave) { // Only display the apparel gizmos if the pawn was previously a colony slave
+				yield break;
+			}
 			if (pawn.apparel != null) {
 				foreach (var apparel in pawn.apparel.WornApparel) {
 					var slaveApparel = apparel as SlaveApparel;
