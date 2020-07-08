@@ -15,6 +15,10 @@
 	<Desc_MiserableSlaves>A colony slave, {0}, is in a dangerously low mood. A miserable slave is more likely to attempt to break free or attack your colonists.</Desc_MiserableSlaves>
 	<Desc_MiserableSlavesPlural>There are multiple slaves in the colony exhibiting dangerously low moods. Miserable slaves are more likely to attempt to break free or even stage a revolt. The slaves are:\n\n{0}</Desc_MiserableSlavesPlural>
 
+	<Label_Timeout>Slaves in timeout</Label_Timeout>
+	<Desc_Timeout>A colony slave, {0}, is in timeout following their escape attempt. They will rejoin the colony after some time has passed.</Desc_Timeout>
+	<Desc_TimeoutPlural>There are multiple slaves in timeout following their escape attempts. The slaves are:\n\n{0}\n\nThey will rejoin the colony after some time has passed.</Desc_TimeoutPlural>
+
 	<Label_CollarExplosive_Arm>Arm Collar</Label_CollarExplosive_Arm>
 	<Desc_CollarExplosive_Arm>Ready the explosives in the slave collar for detonation.</Desc_CollarExplosive_Arm>
 	<Label_CollarExplosive_Detonate>Detonate</Label_CollarExplosive_Detonate>

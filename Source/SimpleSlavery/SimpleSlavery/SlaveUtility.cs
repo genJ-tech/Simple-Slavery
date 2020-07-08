@@ -2,6 +2,7 @@
 using RimWorld;
 using Verse;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SimpleSlavery {
 	public static class SlaveUtility {
@@ -113,6 +114,11 @@ namespace SimpleSlavery {
 				}
 			}
 			return pawns;
+		}
+
+		public static List<Pawn> GetSlavesInTimeout() {
+			var pawns = PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_PrisonersOfColony.Where(pawn => GetEnslavedHediff(pawn)?.waitingInJail != null);
+			return pawns.ToList();
 		}
 
 		public static void TryInstantBreak(Pawn pawn, float chance, MentalStateDef breakDef) {

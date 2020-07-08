@@ -468,6 +468,17 @@ namespace SimpleSlavery {
 			if (slaveMemory == null || !slaveMemory.wasColonySlave) { // Only display the apparel gizmos if the pawn was previously a colony slave
 				yield break;
 			}
+			if (SlaveUtility.IsPawnColonySlave(pawn)) {
+				var hediff = SlaveUtility.GetEnslavedHediff(pawn);
+				if (hediff.waitingInJail) {
+					var timeout = new Command_Action();
+					timeout.defaultLabel = "Label_Timeout".Translate();
+					timeout.defaultDesc = "Desc_Timeout".Translate();
+					timeout.icon = ContentFinder<Texture2D>.Get("UI/Commands/DetonateCollar", true);
+					timeout.disabled = true;
+					yield return timeout;
+				}
+			}
 			if (pawn.apparel != null) {
 				foreach (var apparel in pawn.apparel.WornApparel) {
 					var slaveApparel = apparel as SlaveApparel;

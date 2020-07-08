@@ -6,6 +6,14 @@
 		<linkUrl>https://github.com/MarkSill/Simple-Slavery</linkUrl>
 	</HugsLib.UpdateFeatureDef>
 
+	<HugsLib.UpdateFeatureDef ParentName = "SSUpdateFeatureBase">
+		<defName>SimpleSlavery_1_1_0</defName>
+		<assemblyVersion>1.1.0</assemblyVersion>
+		<content>
+			There is now an alert for when slaves are in timeout. Hopefully this will make it more clear that they're supposed to be in prison.
+		</content>
+	</HugsLib.UpdateFeatureDef>
+
 	<HugsLib.UpdateFeatureDef ParentName="SSUpdateFeatureBase">
 		<defName>SimpleSlavery_1_0_0</defName>
 		<assemblyVersion>1.0.0</assemblyVersion>

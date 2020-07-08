@@ -48,6 +48,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Alert_MiserableSlaves.cs" />
+    <Compile Include="Alert_Timeout.cs" />
     <Compile Include="Collars.cs" />
     <Compile Include="DefOf.cs" />
     <Compile Include="Jobs\Emancipate.cs" />

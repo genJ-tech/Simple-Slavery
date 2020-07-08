@@ -250,7 +250,7 @@ namespace SimpleSlavery {
 
 		// Try to drum up the courage to escape
 		public void ConsiderEscape() {
-			if (!pawn.guest.IsPrisoner && !pawn.GetRoom().isPrisonCell && !isMovingToEscape) {
+			if (!pawn.guest.IsPrisoner && !pawn.GetRoom().isPrisonCell && !isMovingToEscape && willpower > 0f) {
 
 				// moodFactor multiplies the time between escape attempts
 				var moodFactor = Math.Min(pawn.needs.mood.CurInstantLevelPercentage + 0.5, 1f);
