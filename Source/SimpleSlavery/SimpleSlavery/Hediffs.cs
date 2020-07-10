@@ -8,7 +8,7 @@ namespace SimpleSlavery {
 	public class Hediff_EmancipateFix : HediffWithComps {
 		public Faction actualFaction = null;
 		public Faction slaverFaction = null;
-		public float willpower = 100;
+		public float willpower = 1f;
 		public override void PostTick() {
 			base.PostTick();
 			if (this.ageTicks > 1) {
@@ -17,8 +17,8 @@ namespace SimpleSlavery {
 				if (pawn.GetRoom().isPrisonCell) {
 					pawn.guest.interactionMode = PrisonerInteractionModeDefOf.NoInteraction;
 				} else {
-					if (willpower <= 1 || // Broken slaves will typically join
-							(willpower <= 25 && pawn.needs.mood.CurLevelPercentage > Rand.Range(0.55f, 0.95f)) &&
+					if (willpower <= 0.01f || // Broken slaves will typically join
+							(willpower <= 0.25f  && pawn.needs.mood.CurLevelPercentage > Rand.Range(0.55f, 0.95f)) &&
 							pawn.story.traits.allTraits.Find(x => x.def == TraitDefOf.Nerves && x.Degree > 0) == null // Iron-willed/steadfast pawns never join on emancipation
 					) {// Join the colony
 						pawn.guest.SetGuestStatus(null);

@@ -1,4 +1,7 @@
 # Simple Slavery Changelog
+## v1.1.1
+* Fix issue with slaves joining the colony immediately when emancipated.
+
 ## v1.1.0
 * Add alert for when slaves are in timeout following an escape attempt. Hopefully this will make it more clear that they're supposed to be there.
 * Keep track of slaves previously controlled by the colony. This is used so only pawns currently or previously controlled by the colony can have their collar abilities used. Selling a slave will mark them as no longer being controlled by the colony.
