@@ -11,6 +11,7 @@ namespace SimpleSlavery.Jobs {
 			}
 		}
 		public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false) {
+			// TODO: Look into this deprecation and see if anything needs to actually change for the new signature (which adds an optional bool)
 			if (!ShouldTakeCareOfPrisoner(pawn, t)) {
 				return null;
 			}

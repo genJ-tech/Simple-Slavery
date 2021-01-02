@@ -20,6 +20,7 @@ namespace SimpleSlavery {
 			if (!SlaveUtility.IsPawnColonySlave(pawn)) {
 				SlaveUtility.GiveSlaveCollar(pawn, collar);
 				pawn.health.AddHediff(SS_HediffDefOf.Enslaved);
+				GetSlaveMemoryHediff(pawn).wasColonySlave = true;
 			}
 		}
 
