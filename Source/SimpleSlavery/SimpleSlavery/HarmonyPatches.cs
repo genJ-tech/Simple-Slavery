@@ -465,7 +465,6 @@ namespace SimpleSlavery {
 
 		internal static IEnumerable<Gizmo> SlaveGizmos(Pawn pawn) {
 			var slaveMemory = SlaveUtility.GetSlaveMemoryHediff(pawn);
-			Log.Message($"{pawn.Name}, {slaveMemory?.wasColonySlave}");
 			if (slaveMemory == null || !slaveMemory.wasColonySlave) { // Only display the apparel gizmos if the pawn was previously a colony slave
 				yield break;
 			}
