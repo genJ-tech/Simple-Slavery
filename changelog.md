@@ -1,4 +1,8 @@
 # Simple Slavery Changelog
+## v1.1.2
+* Updated to RimWorld 1.2 by NicolasSeiler.
+* Fixed special collars not working before reloading (probably anyway).
+
 ## v1.1.1
 * Fix issue with slaves joining the colony immediately when emancipated.
 
