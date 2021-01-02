@@ -3,6 +3,9 @@
 * Updated to RimWorld 1.2 by NicolasSeiler.
 * Fixed special collars not working before reloading (probably anyway).
 
+### v1.1.2a
+* Left a logging operation in the last version by accident.
+
 ## v1.1.1
 * Fix issue with slaves joining the colony immediately when emancipated.
 
