@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Enslaved.label>asservi(e) (masqué)</Enslaved.label>
+  <Enslaved.description>masqué</Enslaved.description>
+
+  <SlaveMemory.label>souvenir d'esclavage (masqué)</SlaveMemory.label>
+  <SlaveMemory.description>masqué</SlaveMemory.description>
+
+  <Hediff_EmancipateFix.label>fixes specific bug</Hediff_EmancipateFix.label>
+  <Hediff_EmancipateFix.description>fixes specific bug</Hediff_EmancipateFix.description>
+
+  <Crypto_Stasis.label>crypto-stase</Crypto_Stasis.label>
+  <Crypto_Stasis.description>crypto-stase</Crypto_Stasis.description>
+
+  <Electrocuted.label>Électrocuté(e)</Electrocuted.label>
+  <Electrocuted.description>Électrocuté(e)</Electrocuted.description>
+
+
+</LanguageData>

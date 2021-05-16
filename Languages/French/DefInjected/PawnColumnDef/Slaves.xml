@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Willpower.label>volonté</Willpower.label>
+  <Willpower.headerTip>La volonté de l'esclave. Lorsqu'elle atteint 0 %, l'esclave est brisé..</Willpower.headerTip>
+
+  <Emancipate.headerTip>Affranchir et libérer les esclaves.</Emancipate.headerTip>
+  <AdjustShackles.headerTip>Ajout ou suppression de chaînes sur les esclaves.</AdjustShackles.headerTip>
+
+
+</LanguageData>

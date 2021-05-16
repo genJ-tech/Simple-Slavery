@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <LabelWordSlave>esclave</LabelWordSlave>
+  <LabelWordEmancipate>affranchir</LabelWordEmancipate>
+  <CommandDescriptionEmancipate>Indique si {0} doit être libéré ou non. Un gardien ne pourra affranchir {0} que si cette case est cochée..</CommandDescriptionEmancipate>
+  <LabelWordShackle>enchaîner</LabelWordShackle>
+  <CommandDescriptionShackle>Indique si {0} doit être enchaîné ou non. Les esclaves enchaînés ne peuvent pas se déplacer rapidement, ce qui les rend plus faciles à attraper mais moins productifs..</CommandDescriptionShackle>
+  <EnslavedPrisonerSuccess>{0} a asservi {1} sans incident, et peut maintenant être mis(e) au travail.</EnslavedPrisonerSuccess>
+  <MessageSlaveEscaping>L'esclave {0} tente de s'échapper!</MessageSlaveEscaping>
+  <ReasonFailedEnslave>refuse d'être asservi(e)</ReasonFailedEnslave>
+  <LetterIncidentSlaveEscaping>{0} tente de s'échapper!</LetterIncidentSlaveEscaping>
+  <LetterLabelSlaveEscaping>Esclave en fuite!</LetterLabelSlaveEscaping>
+
+  <Label_MiserableSlaves>Esclaves misérables</Label_MiserableSlaves>
+  <Desc_MiserableSlaves>Un esclave de colonie, {0}, est d'une humeur dangereusement basse. Un esclave malheureux est plus susceptible de tenter de s'échapper ou d'attaquer vos colons..</Desc_MiserableSlaves>
+  <Desc_MiserableSlavesPlural>De nombreux esclaves de la colonie présentent une humeur dangereusement basse. Les esclaves malheureux sont plus susceptibles de tenter de s'échapper ou même de se révolter. Les esclaves sont:\n\n{0}</Desc_MiserableSlavesPlural>
+
+  <Label_Timeout>Esclaves aux arrêts</Label_Timeout>
+  <Desc_Timeout>Un esclave de la colonie, {0}, est mis(e) aux arrêts suite à sa tentative d'évasion. Il rejoindra la colonie après un certain temps..</Desc_Timeout>
+  <Desc_TimeoutPlural>Il y a plusieurs esclaves aux arrêts suite à leurs tentatives d'évasion. Les esclaves sont:\n\n{0}\n\nIls rejoindront la colonie après un certain temps.</Desc_TimeoutPlural>
+
+  <Label_CollarExplosive_Arm>Armer le collier</Label_CollarExplosive_Arm>
+  <Desc_CollarExplosive_Arm>Prépare les explosifs dans le collier de l'esclave pour détonation..</Desc_CollarExplosive_Arm>
+  <Label_CollarExplosive_Detonate>Faire exploser</Label_CollarExplosive_Detonate>
+  <Desc_CollarExplosive_Detonate>Fait exploser les explosifs du collier, tuant instantanément le porteur.</Desc_CollarExplosive_Detonate>
+  <ReasonArmedExplosiveCollar>Le collier explosif a été armé pour exploser.</ReasonArmedExplosiveCollar>
+
+  <Label_CollarElectric_Arm>Zapper</Label_CollarElectric_Arm>
+  <Desc_CollarElectric_Arm>Électrocute le porteur jusqu'à ce qu'il perde conscience.</Desc_CollarElectric_Arm>
+  <LetterIncidentECHeartAttack>{0} fait une crise cardiaque à cause d'un choc électrique !</LetterIncidentECHeartAttack>
+  <LetterLabelECHeartAttack>Crise cardiaque</LetterLabelECHeartAttack>
+
+  <Label_CollarCrypto_Arm>Geler</Label_CollarCrypto_Arm>
+  <Desc_CollarCrypto_Arm>Gèle le porteur sur place.</Desc_CollarCrypto_Arm>
+
+  <slaveValueSetting_title>Valeur de l'esclave</slaveValueSetting_title>
+  <slaveValueSetting_desc>Comment un esclave est comptabilisé dans les incidents. 0 il ne compte pas, 1 signifie la même chose qu'un colon normal. Valeur par défaut : 0,5</slaveValueSetting_desc>
+  <escapesEnabledSetting_title>Évasions activées</escapesEnabledSetting_title>
+  <escapesEnabledSetting_desc>Indique si les esclaves peuvent tenter de s'échapper. Valeur par défaut : true</escapesEnabledSetting_desc>
+  <showSlavesInColonistBar_title>Montrer les esclaves dans la barre des colons</showSlavesInColonistBar_title>
+  <showSlavesInColonistBar_desc>Afficher ou non les esclaves dans la barre des colons. Valeur par défaut : false</showSlavesInColonistBar_desc>
+  <willpowerFallRate_title>Taux de diminution de la volonté</willpowerFallRate_title>
+  <willpowerFallRate_desc>La vitesse à laquelle la volonté des esclaves diminue au fil du temps. Valeur par défaut : 1</willpowerFallRate_desc>
+
+</LanguageData>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <DoEnslavement.label>asservir les prisonniers</DoEnslavement.label>
+  <DoEnslavement.verb>asservir</DoEnslavement.verb>
+  <DoEnslavement.gerund>asservit</DoEnslavement.gerund>
+
+  <DoEmancipate.label>affranchir les esclaves</DoEmancipate.label>
+  <DoEmancipate.verb>affranchir</DoEmancipate.verb>
+  <DoEmancipate.gerund>affranchit</DoEmancipate.gerund>
+
+  <DoShackling.label>enchaîner les esclaves</DoShackling.label>
+  <DoShackling.verb>ajuster les chaînes</DoShackling.verb>
+  <DoShackling.gerund>ajuste les chaînes</DoShackling.gerund>
+
+
+</LanguageData>

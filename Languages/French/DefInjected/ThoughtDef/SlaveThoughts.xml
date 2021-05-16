@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <EnslavedThought.stages.0.label>asservi(e)</EnslavedThought.stages.0.label>
+  <EnslavedThought.stages.0.description>Je viens d'être asservi par ces gens. Je n'arrive pas à croire.</EnslavedThought.stages.0.description>
+  <EnslavedThought.stages.1.label>asservi(e)</EnslavedThought.stages.1.label>
+  <EnslavedThought.stages.1.description>On me garde comme esclave. J'aimerais juste pouvoir être libre.</EnslavedThought.stages.1.description>
+  <EnslavedThought.stages.2.label>asservi(e)</EnslavedThought.stages.2.label>
+  <EnslavedThought.stages.2.description>J'ai l'impression que je ne serai plus jamais libre..</EnslavedThought.stages.2.description>
+  <EnslavedThought.stages.3.label>asservi(e)</EnslavedThought.stages.3.label>
+  <EnslavedThought.stages.3.description>Je ne sais même plus ce que c'est que d'être libre.</EnslavedThought.stages.3.description>
+  <EnslavedThought.stages.4.label>syndrome de Stockholm </EnslavedThought.stages.4.label>
+  <EnslavedThought.stages.4.description>Ces gens ne sont pas si mauvais après tout.</EnslavedThought.stages.4.description>
+
+  <ExplosiveCollar.stages.0.label>collier explosif</ExplosiveCollar.stages.0.label>
+  <ExplosiveCollar.stages.0.description>Ils ont mis un collier explosif autour de mon cou ! Je ferais mieux de ne rien tenter de dangereux si je veux vivre..</ExplosiveCollar.stages.0.description>
+  <ExplosiveCollar.stages.1.label>collier explosif armé</ExplosiveCollar.stages.1.label>
+  <ExplosiveCollar.stages.1.description>Ils vont m'exploser la tête!!!</ExplosiveCollar.stages.1.description>
+  <ExplosiveCollar.stages.2.label>collier d'esclave explosif</ExplosiveCollar.stages.2.label>
+  <ExplosiveCollar.stages.2.description>Ça semble être une mauvaise idée.</ExplosiveCollar.stages.2.description>
+
+  <KnowFellowSlaveDied.stages.0.label>un esclave est mort</KnowFellowSlaveDied.stages.0.label>
+  <KnowFellowSlaveDied.stages.0.description>Un des esclaves de la colonie est mort. Cela ne présage rien de bon pour moi.</KnowFellowSlaveDied.stages.0.description>
+
+
+</LanguageData>

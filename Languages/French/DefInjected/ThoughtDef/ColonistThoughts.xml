@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <SlaveColonyThought.stages.0.label>esclavagisme</SlaveColonyThought.stages.0.label>
+  <SlaveColonyThought.stages.0.description>Notre colonie retient des gens en esclavage. C'est inacceptable.</SlaveColonyThought.stages.0.description>
+
+  <KnowSlaveDied.stages.0.label>un esclave est mort</KnowSlaveDied.stages.0.label>
+  <KnowSlaveDied.stages.0.description>Un des esclaves est mort.</KnowSlaveDied.stages.0.description>
+
+
+</LanguageData>
