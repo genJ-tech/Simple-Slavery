@@ -2,9 +2,9 @@
 <LanguageData>
   <LabelWordSlave>esclave</LabelWordSlave>
   <LabelWordEmancipate>affranchir</LabelWordEmancipate>
-  <CommandDescriptionEmancipate>Indique si {0} doit être libéré ou non. Un gardien ne pourra affranchir {0} que si cette case est cochée..</CommandDescriptionEmancipate>
+  <CommandDescriptionEmancipate>Indique si {0} doit être libéré ou non. Un gardien ne pourra affranchir {0} que si cette case est cochée.</CommandDescriptionEmancipate>
   <LabelWordShackle>enchaîner</LabelWordShackle>
-  <CommandDescriptionShackle>Indique si {0} doit être enchaîné ou non. Les esclaves enchaînés ne peuvent pas se déplacer rapidement, ce qui les rend plus faciles à attraper mais moins productifs..</CommandDescriptionShackle>
+  <CommandDescriptionShackle>Indique si {0} doit être enchaîné ou non. Les esclaves enchaînés ne peuvent pas se déplacer rapidement, ce qui les rend plus faciles à attraper mais moins productifs.</CommandDescriptionShackle>
   <EnslavedPrisonerSuccess>{0} a asservi {1} sans incident, et peut maintenant être mis(e) au travail.</EnslavedPrisonerSuccess>
   <MessageSlaveEscaping>L'esclave {0} tente de s'échapper!</MessageSlaveEscaping>
   <ReasonFailedEnslave>refuse d'être asservi(e)</ReasonFailedEnslave>
@@ -12,15 +12,15 @@
   <LetterLabelSlaveEscaping>Esclave en fuite!</LetterLabelSlaveEscaping>
 
   <Label_MiserableSlaves>Esclaves misérables</Label_MiserableSlaves>
-  <Desc_MiserableSlaves>Un esclave de colonie, {0}, est d'une humeur dangereusement basse. Un esclave malheureux est plus susceptible de tenter de s'échapper ou d'attaquer vos colons..</Desc_MiserableSlaves>
+  <Desc_MiserableSlaves>Un esclave de colonie, {0} est d'une humeur dangereusement basse. Un esclave malheureux est plus susceptible de tenter de s'échapper ou d'attaquer vos colons.</Desc_MiserableSlaves>
   <Desc_MiserableSlavesPlural>De nombreux esclaves de la colonie présentent une humeur dangereusement basse. Les esclaves malheureux sont plus susceptibles de tenter de s'échapper ou même de se révolter. Les esclaves sont:\n\n{0}</Desc_MiserableSlavesPlural>
 
   <Label_Timeout>Esclaves aux arrêts</Label_Timeout>
-  <Desc_Timeout>Un esclave de la colonie, {0}, est mis(e) aux arrêts suite à sa tentative d'évasion. Il rejoindra la colonie après un certain temps..</Desc_Timeout>
+  <Desc_Timeout>Un esclave de la colonie, {0} est mis(e) aux arrêts suite à sa tentative d'évasion. Il rejoindra la colonie après un certain temps.</Desc_Timeout>
   <Desc_TimeoutPlural>Il y a plusieurs esclaves aux arrêts suite à leurs tentatives d'évasion. Les esclaves sont:\n\n{0}\n\nIls rejoindront la colonie après un certain temps.</Desc_TimeoutPlural>
 
   <Label_CollarExplosive_Arm>Armer le collier</Label_CollarExplosive_Arm>
-  <Desc_CollarExplosive_Arm>Prépare les explosifs dans le collier de l'esclave pour détonation..</Desc_CollarExplosive_Arm>
+  <Desc_CollarExplosive_Arm>Prépare les explosifs dans le collier de l'esclave pour détonation.</Desc_CollarExplosive_Arm>
   <Label_CollarExplosive_Detonate>Faire exploser</Label_CollarExplosive_Detonate>
   <Desc_CollarExplosive_Detonate>Fait exploser les explosifs du collier, tuant instantanément le porteur.</Desc_CollarExplosive_Detonate>
   <ReasonArmedExplosiveCollar>Le collier explosif a été armé pour exploser.</ReasonArmedExplosiveCollar>
